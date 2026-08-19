@@ -1,7 +1,7 @@
 import Image from "next/image";
 import bitgoBlog from "../../public/bitgo_blog.png";
+import Link from "next/link";
 import { formatPostDate, getCategory, trendingPosts } from "@/lib/hero_blog";
-import ArrowSwoop from "@/components/icons/ArrowSwoop";
 
 export default function Hero() {
   const post = trendingPosts[0];
@@ -19,7 +19,6 @@ export default function Hero() {
           fill
           preload
           quality={100}
-          placeholder="blur"
           sizes="(max-width: 1400px) 100vw, 1400px"
           className="object-cover object-[70%_top] md:object-center"
         />
@@ -60,7 +59,10 @@ export default function Hero() {
             <span>{post.readingTimeMinutes} min read</span>
           </div>
 
-          <div className="group h-12 cursor-pointer justify-center sm:max-w-70 w-full mt-5 bg-white text-black flex items-center gap-3.5">
+          <Link
+            href={`/Blog?slug=${encodeURIComponent(post.slug)}`}
+            className="group mt-5 flex h-12 w-full cursor-pointer items-center justify-center gap-3.5 bg-white text-black sm:max-w-70"
+          >
             Read More
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -77,7 +79,7 @@ export default function Hero() {
               <path d="M5 12h14" />
               <path d="m12 5 7 7-7 7" />
             </svg>
-          </div>
+          </Link>
         </div>
       </div>
     </div>

@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 const categories = [
   {
@@ -73,7 +74,8 @@ export default function Category() {
   snap-x snap-mandatory sm:snap-none scrollbar-hide"
         >
           {categories.map((category) => (
-            <div
+            <Link
+              href={`/News?category=${category.name.toLowerCase() === "regulations" ? "regulations" : category.name.toLowerCase()}`}
               key={category.name}
               className="overflow-hidden shrink-0 w-[85%] xs:w-[60%] sm:w-auto snap-start"
             >
@@ -114,7 +116,7 @@ export default function Category() {
                   {category.description}
                 </p>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </div>

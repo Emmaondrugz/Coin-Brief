@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Header from "@/components/header";
 import Ticker from "@/components/ticker";
 import Footer from "@/components/footer";
@@ -21,6 +21,19 @@ const categoryOptions = [
 
 export default function News() {
   const [activeCategory, setActiveCategory] = useState("All");
+
+  useEffect(() => {
+    const requestedCategory = new URLSearchParams(window.location.search).get(
+      "category",
+    );
+    const matchingCategory = categoryOptions.find(
+      (category) => category.slug === requestedCategory,
+    );
+
+    if (matchingCategory) {
+      setActiveCategory(matchingCategory.label);
+    }
+  }, []);
 
   const scrollContainerRef = useRef<HTMLDivElement | null>(null);
 
@@ -63,8 +76,6 @@ export default function News() {
     (post) =>
       !selectedCategory?.slug || post.category === selectedCategory.slug,
   );
-
-  console.log(posts);
 
   return (
     <div className="h-fit w-full bg-white inter">
@@ -150,9 +161,7 @@ export default function News() {
             {posts.map((post) => (
               <a
                 key={post.slug}
-                href={post.source?.url || "#"}
-                target="_blank"
-                rel="noopener noreferrer"
+                href={`/Blog?slug=${encodeURIComponent(post.slug)}`}
                 className="group flex min-w-0 flex-col gap-3"
               >
                 <div className="relative aspect-video w-full overflow-hidden bg-gray-100">

@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import Trending from "./trending";
 import { latestPosts, formatPostDate } from "@/lib/blogs";
 
@@ -11,7 +12,6 @@ export default function Latest() {
     category: post.category.charAt(0).toUpperCase() + post.category.slice(1),
     date: formatPostDate(post.publishedAt),
     image: post.images[0] || "/images/placeholder.jpg",
-    url: post.source?.url || "#",
     slug: post.slug,
   }));
 
@@ -35,11 +35,9 @@ export default function Latest() {
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               {posts.map((post, i) => (
-                <a
+                <Link
                   key={i}
-                  href={post.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href={`/Blog?slug=${encodeURIComponent(post.slug)}`}
                   className="group flex flex-col gap-3"
                 >
                   <div className="relative w-full aspect-video overflow-hidden bg-gray-100">
@@ -64,7 +62,7 @@ export default function Latest() {
                       {post.title}
                     </h3>
                   </div>
-                </a>
+                </Link>
               ))}
             </div>
           </div>

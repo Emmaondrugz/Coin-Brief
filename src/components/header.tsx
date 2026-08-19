@@ -1,7 +1,7 @@
 import { Fragment } from "react";
 import Sparkle from "@/components/icons/Sparkle";
 
-const categories = ["Home", "News", "Analysis", "Guides"];
+const categories = ["Home", "News", "Learn"];
 
 export default function Header() {
   return (
