@@ -20,6 +20,19 @@ You can start editing the page by modifying `app/page.tsx`. The page auto-update
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
+## Renaming the project
+
+The site name is never hardcoded — it flows from one place, so renaming is cheap:
+
+1. Edit `NEXT_PUBLIC_SITE_NAME` in `.env.local` (see `.env.example` for the full list). Restart `npm run dev` to pick it up.
+2. Read it anywhere via `import { siteConfig } from "@/config/site"` — `siteConfig.name`. The root layout already uses it for `<title>`.
+
+Optional, and independent of the above:
+
+- `name` in `package.json` (must be lowercase, no spaces — npm rule).
+- The folder name itself. Nothing in the code depends on it.
+
+
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:
