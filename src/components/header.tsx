@@ -22,7 +22,7 @@ export default function Header() {
             <Fragment key={category}>
               {index > 0 && <Sparkle className="w-3 text-black" />}
               <a
-                href={category === "Home" ? "/" : `/${category}`}
+                href={category == "Home" ? "/" : `/${category}`}
                 className="text-black"
               >
                 {category}

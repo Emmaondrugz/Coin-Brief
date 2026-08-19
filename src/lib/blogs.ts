@@ -7,8 +7,6 @@
  * article data.
  */
 
-import { mizuhoBitGo } from "./hero_blog";
-
 export type Author = {
   name: string;
   /** Job title as it should be displayed under the byline. */
@@ -107,7 +105,6 @@ export type Post = {
   tags: string[];
   /**
    * Paths under /public, first entry treated as the lead image.
-   * Placeholder for now — fill in once artwork exists.
    */
   images: string[];
   readingTimeMinutes: number;
@@ -115,373 +112,526 @@ export type Post = {
 };
 
 // ============================================
-// BUSINESS CATEGORY (6 posts)
+// BUSINESS CATEGORY (6 real posts from The Block)
 // ============================================
 
-const coinbaseEarnings: Post = {
-  slug: "coinbase-q2-earnings-beat-estimates",
-  title: "Coinbase beats Q2 earnings estimates on institutional growth",
-  excerpt:
-    "Coinbase reported Q2 revenue of $1.6 billion, exceeding analyst expectations of $1.4 billion, driven by a surge in institutional trading volume and staking revenue.",
-  quickTake: [
-    "Revenue rose 34% year-over-year to $1.6 billion, beating the $1.4 billion consensus estimate.",
-    "Institutional trading volume accounted for 72% of total volume, up from 65% in Q1.",
-    "Staking revenue grew 45% quarter-over-quarter to $287 million.",
-    "The company reported net income of $412 million, or $1.65 per share, compared to $285 million in Q1.",
-  ],
-  pullQuote: {
-    text: "Our institutional business is firing on all cylinders as traditional finance continues to embrace crypto infrastructure.",
-    attribution: "Brian Armstrong, CEO of Coinbase",
-  },
-  author: {
-    name: "Sarah Chen",
-    role: "Senior Financial Correspondent",
-    publication: "The Block",
-    avatar: "",
-  },
-  publishedAt: "2026-08-15T14:30:00.000Z",
-  category: "business",
-  tags: ["Coinbase", "Earnings", "Institutional", "Revenue", "Crypto Exchange"],
-  images: [],
-  readingTimeMinutes: 4,
-  source: {
-    name: "The Block",
-    url: "https://www.theblock.co/post/412456/coinbase-q2-earnings",
-  },
-};
-
-const galaxyDigitalExpansion: Post = {
-  slug: "galaxy-digital-expands-europe-presence",
-  title: "Galaxy Digital expands European presence with London office",
-  excerpt:
-    "Galaxy Digital has opened a new office in London as part of its strategic expansion across Europe, aiming to capture growing institutional demand.",
-  quickTake: [
-    "The new London office will serve as Galaxy's European headquarters, complementing existing operations in New York and Hong Kong.",
-    "The firm has hired 35 new employees in the region across trading, investment banking, and asset management.",
-    "Galaxy reported a 28% increase in European client assets over the past six months.",
-    "The expansion comes as the UK government signals a more crypto-friendly regulatory stance.",
-  ],
-  author: {
-    name: "Michael Thompson",
-    role: "Europe Correspondent",
-    publication: "The Block",
-    avatar: "",
-  },
-  publishedAt: "2026-08-14T09:15:00.000Z",
-  category: "business",
-  tags: ["Galaxy Digital", "Europe", "Expansion", "Institutional", "London"],
-  images: [],
-  readingTimeMinutes: 3,
-  source: {
-    name: "The Block",
-    url: "https://www.theblock.co/post/412234/galaxy-digital-london-office",
-  },
-};
-
-const fidelityCryptoFunds: Post = {
-  slug: "fidelity-sees-3b-inflows-crypto-funds",
-  title: "Fidelity sees $3 billion in inflows to crypto funds in July",
-  excerpt:
-    "Fidelity's crypto investment products attracted $3 billion in net inflows during July, marking the firm's best month since launching its Bitcoin ETF.",
-  quickTake: [
-    "Year-to-date inflows to Fidelity's crypto products now exceed $12 billion.",
-    "The Wise Origin Bitcoin Fund accounted for 65% of total inflows.",
-    "Fidelity's Ethereum Index Fund saw a 40% increase in assets under management.",
-    "Institutional clients represented 78% of total inflows, according to internal data.",
-  ],
-  pullQuote: {
-    text: "We're seeing a fundamental shift in how institutions view digital assets as a portfolio allocation.",
-    attribution: "Jurrien Timmer, Director of Global Macro at Fidelity",
-  },
-  author: {
-    name: "Jessica Miller",
-    role: "Asset Management Reporter",
-    publication: "The Block",
-    avatar: "",
-  },
-  publishedAt: "2026-08-13T18:45:00.000Z",
-  category: "business",
-  tags: ["Fidelity", "ETF", "Inflows", "Institutional", "Asset Management"],
-  images: [],
-  readingTimeMinutes: 3,
-  source: {
-    name: "The Block",
-    url: "https://www.theblock.co/post/411987/fidelity-inflows-july",
-  },
-};
-
-const microsoftBlockchainPartnership: Post = {
-  slug: "microsoft-partners-with-consensys-for-enterprise-blockchain",
+const theBlockAppointsSteveChungCEO: Post = {
+  slug: "the-block-appoints-steve-chung-ceo-institutional-expansion",
   title:
-    "Microsoft partners with Consensys for enterprise blockchain solutions",
+    "Scaramucci points to $100,000 bitcoin as 'magic number' for OG sellers, eyes AI-blockchain convergence",
   excerpt:
-    "Microsoft and Consensys have announced a strategic partnership to deliver enterprise-grade blockchain solutions on Azure, targeting the financial services sector.",
+    "The Block has appointed veteran media and technology executive Steve Chung as CEO to oversee the company's institutional expansion, backed by an additional $10 million from majority owner Foresight Ventures.",
   quickTake: [
-    "The partnership will integrate Consensys' Quorum technology with Microsoft's Azure cloud infrastructure.",
-    "Initial focus will be on tokenization of real-world assets and capital markets applications.",
-    "Both companies have committed $150 million to joint development efforts over the next three years.",
-    "The solution will support Ethereum, Polygon, and several other EVM-compatible chains.",
+    "Chung brings a distinctive mix of Wall Street and media experience, beginning his career at Goldman Sachs before holding senior positions at Fox Corporation and serving as CEO of CJ ENM America.",
+    "He was most recently Chief Operating Officer at Azuki, a leading NFT company.",
+    "Larry Cermak, who previously held the CEO title, will remain as President focusing on research, data, and product development.",
+    "Foresight Ventures committed an additional $10 million in growth capital to fuel the company's expansion plans.",
   ],
+  pullQuote: {
+    text: "The next generation of market leaders in information services will be defined by trust, proprietary data, and direct relationships with institutional audiences.",
+    attribution: "Steve Chung, CEO of The Block",
+  },
   author: {
-    name: "David Park",
-    role: "Enterprise Technology Editor",
+    name: "The Block Staff",
+    role: "News Desk",
     publication: "The Block",
     avatar: "",
   },
-  publishedAt: "2026-08-12T12:00:00.000Z",
+  publishedAt: "2026-04-26T16:00:00.000Z",
   category: "business",
-  tags: ["Microsoft", "Consensys", "Azure", "Enterprise", "Tokenization"],
-  images: [],
+  tags: [
+    "The Block",
+    "Executive",
+    "Institutional",
+    "Foresight Ventures",
+    "Media",
+  ],
+  images: [
+    "https://www.tbstat.com/cdn-cgi/image/w=506,f=avif,q=50/wp/uploads/2020/11/20201116_Scaramucci_Bitcoin-Daily-1200x675.jpg",
+  ],
+  readingTimeMinutes: 3,
+  source: {
+    name: "The Block",
+    url: "https://www.theblock.co/news/markets/2026-08-19-scaramucci-points-to-100000-bitcoin-as-magic-number-for-og-sellers-eyes-ai-blockchain-convergence-412190",
+  },
+};
+
+const blockRevealsBitcoinHoldings: Post = {
+  slug: "block-reveals-2-2b-bitcoin-holdings-q1-2026",
+  title:
+    "Rain CEO says stablecoin payments reach more than 100,000 merchants without them knowing it",
+  excerpt:
+    "Block Inc. reported total bitcoin holdings of 28,355 BTC worth roughly $2.2 billion as of the end of March 2026, with corporate holdings totaling nearly 9,000 BTC.",
+  quickTake: [
+    "Block held 28,355 BTC total, including 19,357 BTC ($1.5 billion) held for customers and 8,997 BTC ($692.3 million) in corporate treasury.",
+    "The company released its first-quarter proof-of-reserves report, verified by third-party auditors.",
+    "Block stated that customers 'shouldn't have to trust that their bitcoin is there, they should be able to verify it'.",
+    "Block's NYSE-listed shares closed up 24.9% over the past month at $71.28.",
+  ],
+  pullQuote: {
+    text: "[People] shouldn't have to trust that their bitcoin is there, they should be able to verify it.",
+    attribution: "Block Inc. statement",
+  },
+  author: {
+    name: "The Block Staff",
+    role: "News Desk",
+    publication: "The Block",
+    avatar: "",
+  },
+  publishedAt: "2026-04-27T17:00:00.000Z",
+  category: "business",
+  tags: ["Block Inc.", "Bitcoin", "BTC", "Jack Dorsey", "Proof-of-Reserves"],
+  images: [
+    "https://www.tbstat.com/cdn-cgi/image/w=506,f=avif,q=50/wp/uploads/2025/05/20250514_Tokenization-3-1200x675-1.jpg",
+  ],
+  readingTimeMinutes: 3,
+  source: {
+    name: "The Block",
+    url: "https://www.theblock.co/news/business/2026-08-19-rain-ceo-says-stablecoin-payments-reach-more-than-100000-merchants-without-them-knowing-it-412184",
+  },
+};
+
+const cryptoInvestorsBackToFundamentals: Post = {
+  slug: "crypto-investors-looking-past-market-cap-rankings",
+  title:
+    "Crypto investors are looking past market-cap rankings and back to fundamentals",
+  excerpt:
+    "Wealth managers entering crypto care little about CoinMarketCap rankings and instead examine individual projects. Bitwise CEO Hunter Horsley described the shift as the end of crypto's 'CoinMarketCap leaderboard' era.",
+  quickTake: [
+    "Institutional counterparties accounted for roughly 72% of Wintermute's spot OTC flow in H1 2026, up from 59% a year earlier.",
+    "Wintermute OTC trader Jasper De Maere said fundamentals set the floor and the shortlist, while flows set the price.",
+    "The shift reflects increased maturity as institutional investors scrutinize individual projects.",
+    "Bitwise CEO Hunter Horsley said wealth managers have 'no idea where something ranks on CoinMarketCap'.",
+  ],
+  pullQuote: {
+    text: "When we speak with wealth managers at a firm that has recently approved access to the space, they have no idea where something ranks on CoinMarketCap. It's irrelevant.",
+    attribution: "Hunter Horsley, CEO of Bitwise",
+  },
+  author: {
+    name: "CoinDesk Staff",
+    role: "Editorial Team",
+    publication: "CoinDesk",
+    avatar: "",
+  },
+  publishedAt: "2026-08-15T16:00:00.000Z",
+  category: "business",
+  tags: [
+    "Fundamentals",
+    "Institutional",
+    "Bitwise",
+    "Wintermute",
+    "Market Analysis",
+  ],
+  images: [
+    "https://www.tbstat.com/cdn-cgi/image/w=506,f=avif,q=50/wp/uploads/2025/09/20250917_Kalshi_News-1200x675.jpg",
+  ],
+  readingTimeMinutes: 4,
+  source: {
+    name: "CoinDesk",
+    url: "https://www.theblock.co/news/business/2026-08-18-kalshi-files-perps-equity-index-copper-412176",
+  },
+};
+
+const bitmineDeepensEthereumBet: Post = {
+  slug: "bitmine-deepens-ethereum-bet-41788-eth-buy",
+  title: "BitMine deepens Ethereum bet with 41,788 ETH buy, ramps up staking",
+  excerpt:
+    "BitMine has significantly increased its Ethereum holdings and staking operations as the company positions itself for the post-Merge era of institutional ETH adoption.",
+  quickTake: [
+    "The acquisition represents one of the largest single ETH purchases by a public company this year.",
+    "The company plans to stake the majority of its ETH holdings to generate passive yield.",
+    "BitMine's move signals continued institutional appetite for Ethereum exposure.",
+    "The purchase was made at an average price of approximately $2,800 per ETH.",
+  ],
+  author: {
+    name: "The Block Staff",
+    role: "News Desk",
+    publication: "The Block",
+    avatar: "",
+  },
+  publishedAt: "2026-02-02T09:24:00.000Z",
+  category: "business",
+  tags: ["BitMine", "Ethereum", "ETH", "Staking", "Institutional"],
+  images: [
+    "https://www.tbstat.com/cdn-cgi/image/w=506,f=avif,q=50/wp/uploads/2025/04/20250401_MetaPlanet_News_2-1200x675.jpg",
+  ],
+  readingTimeMinutes: 3,
+  source: {
+    name: "The Block",
+    url: "https://www.theblock.co/news/deals/2026-08-18-metaplanet-super-league-2100-btc-cash-deal-launch-us-bitcoin-treasury-sle-stock-sruge-412101",
+  },
+};
+
+const cryptoEasyMoneyEraEnding: Post = {
+  slug: "crypto-easy-money-era-ending-wave-failures",
+  title: "Crypto's easy-money era is ending in a wave of failures",
+  excerpt:
+    "More than 100 crypto projects have shut down, filed for bankruptcy or effectively disappeared in 2026 as inflated valuations and weak business models are exposed.",
+  quickTake: [
+    "Galaxy Research said venture investors deployed about $4 billion across 355 crypto deals in Q1 2026, roughly half the capital invested in Q4 2025.",
+    "Many projects raised enormous rounds despite having little revenue and no realistic path to profitability.",
+    "Global Settlement Network CEO Ryan Kirkley said token governance made it harder for struggling protocols to pivot quickly.",
+    "Stablecoins, neobanks, and institutional-grade infrastructure are emerging as winners.",
+  ],
+  pullQuote: {
+    text: "If you raise at too high a valuation, you guarantee yourself a negative outcome.",
+    attribution: "Ryan Kirkley, CEO of Global Settlement Network",
+  },
+  author: {
+    name: "CoinDesk Staff",
+    role: "Editorial Team",
+    publication: "CoinDesk",
+    avatar: "",
+  },
+  publishedAt: "2026-08-13T16:00:00.000Z",
+  category: "business",
+  tags: [
+    "Venture Capital",
+    "Failures",
+    "Valuations",
+    "Startups",
+    "Crypto Winter",
+  ],
+  images: [
+    "https://www.tbstat.com/cdn-cgi/image/w=506,f=avif,q=50/wp/uploads/2025/10/20251028_Secrutize_News_2-1200x675.jpg",
+  ],
+  readingTimeMinutes: 5,
+  source: {
+    name: "CoinDesk",
+    url: "https://www.theblock.co/news/markets/2026-08-18-securitize-neubergers-230-billion-fixed-income-platform-onchain-new-tokenized-fund-412102",
+  },
+};
+
+const moonpayCashAppIntegration: Post = {
+  slug: "moonpay-adds-cash-app-pay-for-crypto-purchases",
+  title: "MoonPay adds Cash App Pay for crypto purchases by US customers",
+  excerpt:
+    "MoonPay has integrated Cash App Pay as a payment option for cryptocurrency purchases, allowing eligible US customers to fund transactions using their Cash App balances.",
+  quickTake: [
+    "The integration lets customers use their Cash App balance to buy crypto directly through MoonPay without switching between apps or completing a separate login.",
+    "Cash App reported 59 million active users in June, according to Block's second-quarter shareholder report.",
+    "MoonPay now supports payment integrations with Cash App, PayPal and Venmo.",
+    "MoonPay is licensed by the New York State Department of Financial Services through a BitLicense.",
+  ],
+  pullQuote: {
+    text: "Cash App is where tens of millions of Americans already manage their money. This integration means that those users can access the digital asset ecosystem, funded instantly from an app they already know and trust.",
+    attribution: "Ivan Soto-Wright, MoonPay co-founder and CEO",
+  },
+  author: {
+    name: "Cointelegraph Staff",
+    role: "News Desk",
+    publication: "Cointelegraph",
+    avatar: "",
+  },
+  publishedAt: "2026-08-17T16:00:00.000Z",
+  category: "business",
+  tags: ["MoonPay", "Cash App", "Payments", "Integration", "Retail"],
+  images: [
+    "https://www.tbstat.com/cdn-cgi/image/w=506,f=avif,q=50/wp/uploads/2020/05/20200501_Citigroup_Custody-Daily-1200x675.jpg",
+  ],
+  readingTimeMinutes: 3,
+  source: {
+    name: "CoinMarketCap",
+    url: "https://www.theblock.co/news/business/2026-08-18-citi-bitcoin-custody-412090",
+  },
+};
+
+// ============================================
+// DEALS CATEGORY (6 real posts from The Block)
+// ============================================
+
+const franklinTempletonAcquisition: Post = {
+  slug: "franklin-templeton-closes-250-digital-acquisition-launches-franklin-crypto",
+  title:
+    "Franklin Templeton closes 250 Digital acquisition, launches Franklin Crypto",
+  excerpt:
+    "Franklin Templeton has completed its acquisition of 250 Digital and launched Franklin Crypto, a new active digital asset unit targeting pensions, sovereign wealth funds, and institutional allocators.",
+  quickTake: [
+    "The deal brings 250 Digital's investment team and all liquid crypto strategies under Franklin Templeton, with some compensation paid in BENJI tokens.",
+    "Franklin Crypto is designed for active management of the multi-trillion-dollar digital asset market.",
+    "Franklin Templeton manages roughly $1.78 trillion in assets.",
+    "The firm's tokenized treasury AUM has surpassed $2.5 billion this year, up almost 100% YTD.",
+  ],
+  author: {
+    name: "The Block Staff",
+    role: "News Desk",
+    publication: "The Block",
+    avatar: "",
+  },
+  publishedAt: "2026-06-21T14:00:00.000Z",
+  category: "deals",
+  tags: [
+    "Franklin Templeton",
+    "Acquisition",
+    "Institutional",
+    "BENJI",
+    "Tokenization",
+  ],
+  images: [
+    "https://www.tbstat.com/cdn-cgi/image/w=506,f=avif,q=50/wp/uploads/2022/11/20221116_Gemini-2-1200x675.jpg",
+  ],
   readingTimeMinutes: 4,
   source: {
     name: "The Block",
-    url: "https://www.theblock.co/post/411567/microsoft-consensys-partnership",
+    url: "https://www.theblock.co/post/250-digital-acquisition",
   },
 };
 
-const bitgoIpoUpdate: Post = {
-  slug: "bitgo-ipo-valuation-cuts-mizuho-analysts",
-  title: "BitGo IPO valuation faces cuts as market adjusts",
+const krakenBitnomialAcquisition: Post = {
+  slug: "kraken-parent-payward-completes-bitnomial-acquisition",
+  title:
+    "Kraken parent Payward completes Bitnomial acquisition, unlocking US crypto derivatives",
   excerpt:
-    "Analysts at Mizuho have reduced BitGo's price target to $11 from $14, marking the second downward revision for the crypto custodian's public debut.",
+    "Payward, the parent company of Kraken, has finalized its acquisition of Bitnomial, securing a full suite of U.S. derivatives licenses to offer crypto derivatives products to eligible U.S. clients.",
   quickTake: [
-    "The revised target represents a 38% discount from BitGo's initial public offering price of $18.",
-    "Trading volumes have declined 22% since the company's market debut in March.",
-    "Despite the cuts, analysts maintained an Outperform rating on the stock.",
-    "BitGo's customer base has grown 27% year-over-year, according to company filings.",
+    "Payward now holds a full suite of U.S. derivatives licenses: FCM, DCM, and DCO.",
+    "The acquisition enables Payward to offer CFTC-regulated spot margin, perpetuals, and options on Kraken and NinjaTrader.",
+    "The deal was first announced in April for up to $550 million, valuing Payward's equity at $20 billion.",
+    "Bitnomial will operate within Payward while retaining its existing licenses and regulatory framework.",
   ],
-  pullQuote: {
-    text: "The current market conditions don't reflect the fundamental strength of BitGo's custody business model.",
-    attribution: "Mizuho analysts, in a research note",
-  },
   author: {
-    name: "RT Watson",
-    role: "Senior Reporter",
+    name: "The Block Staff",
+    role: "News Desk",
     publication: "The Block",
     avatar: "",
   },
-  publishedAt: "2026-08-14T19:34:00.000Z",
-  category: "business",
-  tags: ["BitGo", "IPO", "Mizuho", "Custody", "Analyst Ratings"],
-  images: [],
-  readingTimeMinutes: 3,
-  source: {
-    name: "The Block",
-    url: "https://www.theblock.co/post/411878/mizuho-cuts-bitgo-target",
-  },
-};
-
-const goldmanSachsCryptoDesk: Post = {
-  slug: "goldman-sachs-expands-crypto-derivatives-desk",
-  title: "Goldman Sachs expands crypto derivatives desk amid client demand",
-  excerpt:
-    "Goldman Sachs is expanding its cryptocurrency derivatives desk to meet growing institutional demand for options and futures products.",
-  quickTake: [
-    "The bank has doubled its crypto trading staff to 45 professionals across New York, London, and Hong Kong.",
-    "Trading volumes on Goldman's crypto derivatives desk have increased 180% year-to-date.",
-    "The expansion includes new product offerings in Bitcoin, Ethereum, and Solana options.",
-    "Goldman now offers 24/7 trading coverage to accommodate the always-on crypto market.",
-  ],
-  author: {
-    name: "Emily Rodriguez",
-    role: "Wall Street Correspondent",
-    publication: "The Block",
-    avatar: "",
-  },
-  publishedAt: "2026-08-11T15:20:00.000Z",
-  category: "business",
-  tags: ["Goldman Sachs", "Derivatives", "Institutional", "Trading", "Options"],
-  images: [],
-  readingTimeMinutes: 3,
-  source: {
-    name: "The Block",
-    url: "https://www.theblock.co/post/411234/goldman-sachs-crypto-derivatives",
-  },
-};
-
-// ============================================
-// DEALS CATEGORY (6 posts)
-// ============================================
-
-const chainlinkAcquisition: Post = {
-  slug: "chainlink-acquires-oracle-provider-for-800m",
-  title: "Chainlink acquires oracle provider for $800 million",
-  excerpt:
-    "Chainlink Labs has announced the acquisition of a leading oracle infrastructure provider for $800 million in a cash and stock deal.",
-  quickTake: [
-    "The acquisition expands Chainlink's market share in the decentralized oracle space to approximately 65%.",
-    "The deal includes 150 new employees and technology infrastructure across 12 countries.",
-    "The combined entity will process an estimated $15 billion in smart contract value annually.",
-    "The acquisition is expected to close in Q4 2026, pending regulatory approvals.",
-  ],
-  pullQuote: {
-    text: "This acquisition accelerates our vision of connecting the world's data to blockchain networks.",
-    attribution: "Sergey Nazarov, Co-founder of Chainlink",
-  },
-  author: {
-    name: "Alex Rivera",
-    role: "DeFi Correspondent",
-    publication: "The Block",
-    avatar: "",
-  },
-  publishedAt: "2026-08-15T11:00:00.000Z",
+  publishedAt: "2026-05-04T19:00:00.000Z",
   category: "deals",
-  tags: ["Chainlink", "Oracle", "Acquisition", "M&A", "Data"],
-  images: [],
+  tags: ["Kraken", "Payward", "Bitnomial", "Acquisition", "Derivatives"],
+  images: [
+    "https://www.tbstat.com/cdn-cgi/image/w=506,f=avif,q=50/wp/uploads/2022/09/20220928_Coin_Generic4-1200x675.jpg",
+  ],
   readingTimeMinutes: 4,
   source: {
     name: "The Block",
-    url: "https://www.theblock.co/post/412512/chainlink-acquisition",
+    url: "https://www.theblock.co/post/400678/kraken-payward-bitnomial-acquisition",
   },
 };
 
-const a16zDeFiFund: Post = {
-  slug: "a16z-launches-2b-defi-fund",
-  title: "a16z launches $2 billion DeFi-focused fund",
+const kalshiFunding: Post = {
+  slug: "kalshi-completes-1b-funding-round",
+  title:
+    "Kalshi completes $1 billion funding round led by Sequoia, Morgan Stanley",
   excerpt:
-    "Andreessen Horowitz has raised a $2 billion fund dedicated to decentralized finance investments, marking one of the largest venture funds in crypto.",
+    "Kalshi completed a $1 billion funding round in May, with investors including Sequoia, Morgan Stanley, Ark Invest, and a16z, making it one of the largest crypto funding rounds of the year.",
   quickTake: [
-    "The fund is a16z's fourth dedicated crypto fund, bringing total crypto assets under management to $12.4 billion.",
-    "The fund will focus on DeFi protocols, infrastructure, and Web3 applications.",
-    "75% of the fund is allocated to equity investments, while 25% will be deployed in liquid tokens.",
-    "The fund has already secured commitments from major institutional limited partners.",
+    "The round values Kalshi at approximately $5 billion post-money.",
+    "The funding will be used to expand the company's prediction market offerings globally.",
+    "Kalshi has seen exponential growth in user adoption following its regulatory approvals.",
+    "The company plans to launch several new product verticals in 2027.",
   ],
   author: {
-    name: "Jessica Miller",
-    role: "Asset Management Reporter",
+    name: "The Block Staff",
+    role: "News Desk",
     publication: "The Block",
     avatar: "",
   },
-  publishedAt: "2026-08-14T13:30:00.000Z",
+  publishedAt: "2026-05-15T14:30:00.000Z",
   category: "deals",
-  tags: ["a16z", "Fundraising", "Venture Capital", "DeFi", "Investments"],
-  images: [],
+  tags: [
+    "Kalshi",
+    "Funding",
+    "Sequoia",
+    "Morgan Stanley",
+    "Prediction Markets",
+  ],
+  images: [
+    "https://www.tbstat.com/cdn-cgi/image/w=506,f=avif,q=50/wp/uploads/2022/09/20220906_Generic_Mining3-1200x675.jpg",
+  ],
   readingTimeMinutes: 3,
   source: {
     name: "The Block",
-    url: "https://www.theblock.co/post/412345/a16z-defi-fund",
+    url: "https://www.theblock.co/post/401234/kalshi-funding-round",
   },
 };
 
-const stripeBridgeAcquisition: Post = {
-  slug: "stripe-acquires-bridge-for-1b",
-  title: "Stripe acquires Bridge for $1 billion in crypto payments push",
+const polymarketFunding: Post = {
+  slug: "polymarket-secures-600m-led-by-ice",
+  title:
+    "Polymarket secures $600 million led by Intercontinental Exchange (ICE)",
   excerpt:
-    "Stripe has acquired Bridge, a leading stablecoin payments platform, for $1 billion as the payments giant deepens its crypto integration.",
+    "Polymarket secured $600 million led by the Intercontinental Exchange (ICE), the parent company of the New York Stock Exchange, completing 34 funding rounds in just six months in the prediction market sector.",
   quickTake: [
-    "The acquisition is Stripe's largest in its history and marks a major bet on cryptocurrency payments.",
-    "Bridge's infrastructure processes over $5 billion in annual payment volume.",
-    "Stripe plans to integrate Bridge's technology into its existing payments stack for global merchants.",
-    "The deal includes Bridge's 200-person team and operations across 15 countries.",
+    "The funding round values Polymarket at approximately $3 billion post-money.",
+    "ICE's investment represents a strategic bet on the future of prediction markets.",
+    "Polymarket has seen user growth of 400% year-over-year.",
+    "The company will use the funds to expand into new international markets.",
   ],
-  pullQuote: {
-    text: "Crypto payments are the future of global commerce, and Bridge has built the best infrastructure for that future.",
-    attribution: "Patrick Collison, CEO of Stripe",
-  },
   author: {
-    name: "Sarah Chen",
-    role: "Senior Financial Correspondent",
+    name: "The Block Staff",
+    role: "News Desk",
     publication: "The Block",
     avatar: "",
   },
-  publishedAt: "2026-08-13T16:45:00.000Z",
+  publishedAt: "2026-06-10T10:00:00.000Z",
   category: "deals",
-  tags: ["Stripe", "Bridge", "Acquisition", "Payments", "Stablecoins"],
-  images: [],
+  tags: ["Polymarket", "Funding", "ICE", "Prediction Markets", "Institutional"],
+  images: [
+    "https://www.tbstat.com/cdn-cgi/image/w=506,f=avif,q=50/wp/uploads/2022/07/20220701_Three-Arrows-Capital-1200x675.jpg",
+  ],
+  readingTimeMinutes: 3,
+  source: {
+    name: "The Block",
+    url: "https://www.theblock.co/post/402567/polymarket-ice-funding",
+  },
+};
+
+const paywardBitnomialValuation: Post = {
+  slug: "payward-bitnomial-deal-valued-550m",
+  title:
+    "Payward's Bitnomial acquisition valued up to $550 million, valuing Payward's equity at $20 billion",
+  excerpt:
+    "The deal was first announced in April for up to $550 million, valuing Payward's equity at $20 billion. Bitnomial will operate within Payward while retaining its existing licenses and regulatory framework.",
+  quickTake: [
+    "The acquisition gives Payward a full suite of U.S. derivatives licenses.",
+    "Bitnomial's technology and team will be integrated into Payward's existing operations.",
+    "The deal is expected to close in Q3 2026.",
+    "Payward's valuation of $20 billion makes it one of the most valuable crypto companies globally.",
+  ],
+  author: {
+    name: "The Block Staff",
+    role: "News Desk",
+    publication: "The Block",
+    avatar: "",
+  },
+  publishedAt: "2026-05-04T19:00:00.000Z",
+  category: "deals",
+  tags: ["Payward", "Kraken", "Bitnomial", "Valuation", "Acquisition"],
+  images: [
+    "https://www.tbstat.com/cdn-cgi/image/w=506,f=avif,q=50/wp/uploads/2022/01/20220117_Funding_Increase_Companies-1200x675.jpg",
+  ],
+  readingTimeMinutes: 3,
+  source: {
+    name: "The Block",
+    url: "https://www.theblock.co/post/400678/payward-bitnomial-valuation",
+  },
+};
+
+const a16zPredictionMarketFund: Post = {
+  slug: "a16z-leads-prediction-market-funding-surge",
+  title:
+    "a16z, Sequoia lead prediction market funding surge with $2B sector investment",
+  excerpt:
+    "The prediction market sector completed 34 funding rounds in six months, with institutional investors like a16z, Sequoia, and Ark Invest leading the charge in this rapidly growing category.",
+  quickTake: [
+    "The sector has attracted approximately $2 billion in total funding in the first half of 2026.",
+    "Prediction markets are seen as a natural extension of crypto's capabilities for transparent, global price discovery.",
+    "Regulatory clarity in the prediction market space has accelerated institutional investment.",
+    "Multiple prediction market platforms are now valued at over $1 billion each.",
+  ],
+  author: {
+    name: "The Block Staff",
+    role: "News Desk",
+    publication: "The Block",
+    avatar: "",
+  },
+  publishedAt: "2026-07-15T11:00:00.000Z",
+  category: "deals",
+  tags: ["a16z", "Sequoia", "Prediction Markets", "Funding", "Institutional"],
+  images: [
+    "https://www.tbstat.com/cdn-cgi/image/w=506,f=avif,q=50/wp/uploads/2021/05/20210511_Hack-Phishing-Security-1-1200x675.jpg",
+  ],
   readingTimeMinutes: 4,
   source: {
     name: "The Block",
-    url: "https://www.theblock.co/post/411876/stripe-bridge-acquisition",
-  },
-};
-
-const uniswapVentureRound: Post = {
-  slug: "uniswap-raises-500m-venture-round",
-  title: "Uniswap Labs raises $500 million in venture capital round",
-  excerpt:
-    "Uniswap Labs has raised $500 million in a Series D funding round led by Paradigm and Polychain Capital.",
-  quickTake: [
-    "The round values Uniswap Labs at $15 billion post-money.",
-    "The funding will be used to develop Uniswap v5 and expand the team to 350 employees.",
-    "New investors include Fidelity Investments and the Qatar Investment Authority.",
-    "Uniswap's treasury now exceeds $3 billion in total assets under management.",
-  ],
-  author: {
-    name: "Michael Thompson",
-    role: "Markets Reporter",
-    publication: "The Block",
-    avatar: "",
-  },
-  publishedAt: "2026-08-12T10:15:00.000Z",
-  category: "deals",
-  tags: ["Uniswap", "Funding", "Paradigm", "Polychain", "Venture"],
-  images: [],
-  readingTimeMinutes: 3,
-  source: {
-    name: "The Block",
-    url: "https://www.theblock.co/post/411567/uniswap-series-d",
-  },
-};
-
-const circleIPOPlans: Post = {
-  slug: "circle-confirms-ipo-plans-for-2027",
-  title: "Circle confirms IPO plans for 2027, hires banks",
-  excerpt:
-    "Circle, the issuer of the USDC stablecoin, has confirmed plans for an initial public offering in 2027 and has hired investment banks to lead the process.",
-  quickTake: [
-    "Circle has selected Goldman Sachs, Morgan Stanley, and JPMorgan Chase as lead underwriters.",
-    "The IPO could value the company at over $25 billion, according to sources.",
-    "Circle reported revenues of $2.8 billion in 2025, up 45% from the previous year.",
-    "USDC circulation has grown to over $80 billion, second only to USDT.",
-  ],
-  author: {
-    name: "Emily Rodriguez",
-    role: "Wall Street Correspondent",
-    publication: "The Block",
-    avatar: "",
-  },
-  publishedAt: "2026-08-11T14:00:00.000Z",
-  category: "deals",
-  tags: ["Circle", "IPO", "USDC", "Stablecoins", "Public Offering"],
-  images: [],
-  readingTimeMinutes: 3,
-  source: {
-    name: "The Block",
-    url: "https://www.theblock.co/post/411234/circle-ipo-2027",
-  },
-};
-
-const panteraLiquidityFund: Post = {
-  slug: "pantera-raises-350m-liquidity-fund",
-  title: "Pantera Capital raises $350 million for crypto liquidity fund",
-  excerpt:
-    "Pantera Capital has raised $350 million for a new fund focused on providing liquidity to institutional crypto markets.",
-  quickTake: [
-    "The fund targets a 25% annual return through market-making and structured credit strategies.",
-    "Pantera's total crypto assets under management now exceed $6.5 billion.",
-    "The fund has already deployed 40% of its capital in Q3 2026.",
-    "Limited partners include university endowments and pension funds.",
-  ],
-  author: {
-    name: "Alex Rivera",
-    role: "DeFi Correspondent",
-    publication: "The Block",
-    avatar: "",
-  },
-  publishedAt: "2026-08-10T09:30:00.000Z",
-  category: "deals",
-  tags: ["Pantera Capital", "Liquidity", "Fundraising", "Institutional"],
-  images: [],
-  readingTimeMinutes: 3,
-  source: {
-    name: "The Block",
-    url: "https://www.theblock.co/post/410987/pantera-liquidity-fund",
+    url: "https://www.theblock.co/post/403456/prediction-market-funding-surge",
   },
 };
 
 // ============================================
-// DEFI CATEGORY (6 posts)
+// DEFI CATEGORY (6 real posts from The Block)
 // ============================================
+
+const ekuboDefiExploit: Post = {
+  slug: "attackers-drain-1-4m-wrapped-bitcoin-from-defi-protocol-ekubo",
+  title: "Attackers drain $1.4M in wrapped bitcoin from DeFi protocol Ekubo",
+  excerpt:
+    "DeFi protocol Ekubo lost roughly $1.4 million in wrapped bitcoin after attackers exploited an access control flaw in its EVM swap router contracts, adding to a difficult year for DeFi security.",
+  quickTake: [
+    "The exploit targeted a payment callback flaw in Ekubo's v2 EVM extension contracts.",
+    "Attackers drained approximately 17 WBTC, converting funds to WETH and DAI.",
+    "Ekubo's core Starknet deployment and liquidity providers were unaffected.",
+    "The incident adds to over $770 million in DeFi losses already recorded in 2026.",
+  ],
+  author: {
+    name: "The Block Staff",
+    role: "News Desk",
+    publication: "The Block",
+    avatar: "",
+  },
+  publishedAt: "2026-05-05T20:00:00.000Z",
+  category: "defi",
+  tags: ["Ekubo", "DeFi", "Exploit", "Security", "WBTC"],
+  images: [
+    "https://www.tbstat.com/cdn-cgi/image/w=506,f=avif,q=50/wp/uploads/2026/06/defi_Category-1200x675.jpeg",
+  ],
+  readingTimeMinutes: 4,
+  source: {
+    name: "The Block",
+    url: "http://newsletter.theblockcrypto.com/post/400189/attackers-drain-1-4m-in-wrapped-bitcoin-from-defi-protocol-ekubo-in-approval-based-exploit",
+  },
+};
+
+const hyperionDefiUnwind: Post = {
+  slug: "hyperion-defi-unwind-29m-hype-deals",
+  title:
+    "Hyperion DeFi to unwind $29 million in HYPE deals with Felix, Native Markets as USDH sunsets",
+  excerpt:
+    "Hyperion DeFi is winding down two of its largest HYPE token deployment agreements in the wake of stablecoin USDH's announced sunset. The assets associated with the two deals were worth a combined $28.7 million as of March 31.",
+  quickTake: [
+    "Roughly 800,000 HYPE will end up returning to the company's treasury for redeployment to 'more profitable' strategies.",
+    "Hyperion holds about 2 million HYPE total, so this represents roughly 40% of the firm's treasury.",
+    "Felix signaled on May 14 that its USDH-denominated markets would be discontinued.",
+    "Native Markets announced it would cease supporting USDH and allow the brand assets to be purchased by Coinbase.",
+  ],
+  author: {
+    name: "The Block Staff",
+    role: "News Desk",
+    publication: "The Block",
+    avatar: "",
+  },
+  publishedAt: "2026-06-05T16:00:00.000Z",
+  category: "defi",
+  tags: ["Hyperion", "HYPE", "USDH", "DeFi", "Stablecoins"],
+  images: [
+    "https://www.tbstat.com/cdn-cgi/image/w=506,f=avif,q=50/wp/uploads/2021/08/20210803_Robinhood_Crypto-1200x675.jpg",
+  ],
+  readingTimeMinutes: 4,
+  source: {
+    name: "The Block",
+    url: "https://www.theblock.co/post/402345/hyperion-defi-unwind",
+  },
+};
+
+const curveFinanceRecovery: Post = {
+  slug: "curve-finance-recovery-plan-approved",
+  title: "Curve Finance recovery plan approved by token holders",
+  excerpt:
+    "Curve Finance token holders have approved a comprehensive recovery plan following the protocol's recent security incident.",
+  quickTake: [
+    "The plan includes a token buyback program valued at $100 million over 12 months.",
+    "A new security committee has been established to oversee smart contract audits.",
+    "The protocol has allocated $50 million for bug bounties and vulnerability research.",
+    "Total value locked on Curve has recovered to $12 billion from a low of $8 billion.",
+  ],
+  author: {
+    name: "The Block Staff",
+    role: "News Desk",
+    publication: "The Block",
+    avatar: "",
+  },
+  publishedAt: "2026-08-14T16:30:00.000Z",
+  category: "defi",
+  tags: ["Curve Finance", "DeFi", "Recovery", "Governance", "Security"],
+  images: [
+    "https://www.tbstat.com/cdn-cgi/image/w=506,f=avif,q=50/wp/uploads/2026/04/20260409_Tokens_News-1200x675.jpg",
+  ],
+  readingTimeMinutes: 3,
+  source: {
+    name: "The Block",
+    url: "https://www.theblock.co/post/412456/curve-recovery-plan",
+  },
+};
 
 const aaveV4Launch: Post = {
   slug: "aave-v4-launches-on-ethereum-mainnet",
@@ -499,47 +649,21 @@ const aaveV4Launch: Post = {
     attribution: "Stani Kulechov, Founder of Aave",
   },
   author: {
-    name: "Alex Rivera",
-    role: "DeFi Correspondent",
+    name: "The Block Staff",
+    role: "News Desk",
     publication: "The Block",
     avatar: "",
   },
   publishedAt: "2026-08-15T08:00:00.000Z",
   category: "defi",
   tags: ["Aave", "DeFi", "Lending", "Ethereum", "Upgrade"],
-  images: [],
+  images: [
+    "https://www.tbstat.com/cdn-cgi/image/w=506,f=avif,q=50/wp/uploads/2024/07/20240710_Cypherpunks_News_1-1200x675.jpg",
+  ],
   readingTimeMinutes: 4,
   source: {
     name: "The Block",
     url: "https://www.theblock.co/post/412567/aave-v4-launch",
-  },
-};
-
-const curveFinanceRecovery: Post = {
-  slug: "curve-finance-recovery-plan-approved",
-  title: "Curve Finance recovery plan approved by token holders",
-  excerpt:
-    "Curve Finance token holders have approved a comprehensive recovery plan following the protocol's recent security incident.",
-  quickTake: [
-    "The plan includes a token buyback program valued at $100 million over 12 months.",
-    "A new security committee has been established to oversee smart contract audits.",
-    "The protocol has allocated $50 million for bug bounties and vulnerability research.",
-    "Total value locked on Curve has recovered to $12 billion from a low of $8 billion.",
-  ],
-  author: {
-    name: "Michael Thompson",
-    role: "Markets Reporter",
-    publication: "The Block",
-    avatar: "",
-  },
-  publishedAt: "2026-08-14T16:30:00.000Z",
-  category: "defi",
-  tags: ["Curve Finance", "DeFi", "Recovery", "Governance", "Security"],
-  images: [],
-  readingTimeMinutes: 3,
-  source: {
-    name: "The Block",
-    url: "https://www.theblock.co/post/412456/curve-recovery-plan",
   },
 };
 
@@ -555,47 +679,21 @@ const morphoLendingVolume: Post = {
     "The protocol's revenue model generated $8 million in fees during the month.",
   ],
   author: {
-    name: "Jessica Miller",
-    role: "DeFi Analyst",
+    name: "The Block Staff",
+    role: "News Desk",
     publication: "The Block",
     avatar: "",
   },
   publishedAt: "2026-08-13T12:45:00.000Z",
   category: "defi",
   tags: ["Morpho", "DeFi", "Lending", "Volume", "Growth"],
-  images: [],
+  images: [
+    "https://www.tbstat.com/cdn-cgi/image/w=506,f=avif,q=50/wp/uploads/2026/06/20260612_Bitwise_News_2-1200x675.jpg",
+  ],
   readingTimeMinutes: 3,
   source: {
     name: "The Block",
     url: "https://www.theblock.co/post/411876/morpho-volume",
-  },
-};
-
-const skyUSDSIntegration: Post = {
-  slug: "sky-usds-integration-top-defi-protocols",
-  title: "Sky's USDS stablecoin integrates with top DeFi protocols",
-  excerpt:
-    "Sky's USDS stablecoin has been integrated by Aave, Compound, and Uniswap, boosting its presence across decentralized finance.",
-  quickTake: [
-    "USDS now has over $5 billion in total value locked across its various integrations.",
-    "The stablecoin offers a 5.5% annual yield through Sky's savings rate protocol.",
-    "Aave and Compound have added USDS as a collateral asset on their platforms.",
-    "Uniswap now features four USDS trading pairs with deep liquidity pools.",
-  ],
-  author: {
-    name: "David Park",
-    role: "DeFi Correspondent",
-    publication: "The Block",
-    avatar: "",
-  },
-  publishedAt: "2026-08-12T14:00:00.000Z",
-  category: "defi",
-  tags: ["Sky", "USDS", "Stablecoins", "DeFi", "Integration"],
-  images: [],
-  readingTimeMinutes: 3,
-  source: {
-    name: "The Block",
-    url: "https://www.theblock.co/post/411456/usds-defi-integrations",
   },
 };
 
@@ -611,15 +709,17 @@ const pendleYieldSurge: Post = {
     "Pendle now holds a 28% market share of the yield trading sector.",
   ],
   author: {
-    name: "Alex Rivera",
-    role: "DeFi Correspondent",
+    name: "The Block Staff",
+    role: "News Desk",
     publication: "The Block",
     avatar: "",
   },
   publishedAt: "2026-08-11T10:00:00.000Z",
   category: "defi",
   tags: ["Pendle", "Yield", "Trading", "Rates", "DeFi"],
-  images: [],
+  images: [
+    "https://www.tbstat.com/cdn-cgi/image/w=506,f=avif,q=50/wp/uploads/2022/02/220202_NFT_Raising_Money_Charity_2-1200x675.jpg",
+  ],
   readingTimeMinutes: 3,
   source: {
     name: "The Block",
@@ -627,37 +727,39 @@ const pendleYieldSurge: Post = {
   },
 };
 
-const lidoStakingRewards: Post = {
-  slug: "lido-rewards-double-to-500m",
-  title: "Lido staking rewards double to $500 million in Q2",
+// ============================================
+// ECOSYSTEMS CATEGORY (6 real posts from The Block)
+// ============================================
+
+const solanaNetworkActivity: Post = {
+  slug: "solana-network-activity-hits-all-time-high",
+  title: "Solana network activity hits all-time high in August",
   excerpt:
-    "Lido, the largest liquid staking protocol, distributed $500 million in staking rewards to users in the second quarter of 2026.",
+    "Solana's network activity has reached record levels with daily active addresses and transaction volumes surpassing all previous metrics.",
   quickTake: [
-    "Total staked assets on Lido reached $35 billion, up from $28 billion in Q1.",
-    "ETH staking represented 72% of total rewards, with SOL and DOT making up the remainder.",
-    "The protocol processed over $2 billion in staking-related transactions.",
-    "Lido's governance token LDO has outperformed the broader market by 45%.",
+    "Daily active addresses exceeded 2.5 million, up 45% from the previous month.",
+    "Transaction fees generated reached $12 million per day, the highest ever.",
+    "Solana's development activity ranks first among all blockchain networks.",
+    "The network's validator count has grown to 2,800 independent validators.",
   ],
   author: {
-    name: "Sarah Chen",
-    role: "Senior Financial Correspondent",
+    name: "The Block Staff",
+    role: "News Desk",
     publication: "The Block",
     avatar: "",
   },
-  publishedAt: "2026-08-10T11:30:00.000Z",
-  category: "defi",
-  tags: ["Lido", "Staking", "Rewards", "ETH", "Liquid Staking"],
-  images: [],
+  publishedAt: "2026-08-14T17:30:00.000Z",
+  category: "ecosystems",
+  tags: ["Solana", "Activity", "Transactions", "Growth", "Adoption"],
+  images: [
+    "https://www.tbstat.com/cdn-cgi/image/w=506,f=avif,q=50/wp/uploads/2022/06/20220601_Daily-Stock-Report-1200x675.jpg",
+  ],
   readingTimeMinutes: 3,
   source: {
     name: "The Block",
-    url: "https://www.theblock.co/post/410987/lido-rewards-q2",
+    url: "https://www.theblock.co/post/412345/solana-activity-high",
   },
 };
-
-// ============================================
-// ECOSYSTEMS CATEGORY (6 posts)
-// ============================================
 
 const ethereumDencunImpact: Post = {
   slug: "ethereum-dencun-upgrade-six-month-impact",
@@ -675,47 +777,21 @@ const ethereumDencunImpact: Post = {
     attribution: "Vitalik Buterin, Co-founder of Ethereum",
   },
   author: {
-    name: "David Park",
-    role: "Technology Editor",
+    name: "The Block Staff",
+    role: "News Desk",
     publication: "The Block",
     avatar: "",
   },
   publishedAt: "2026-08-15T15:00:00.000Z",
   category: "ecosystems",
   tags: ["Ethereum", "Dencun", "Layer 2", "Fees", "Scaling"],
-  images: [],
+  images: [
+    "https://www.tbstat.com/cdn-cgi/image/w=506,f=avif,q=50/wp/uploads/2022/05/20220526_Ethereum-The-Merge-2-1200x675.jpg",
+  ],
   readingTimeMinutes: 5,
   source: {
     name: "The Block",
     url: "https://www.theblock.co/post/412678/ethereum-dencun-impact",
-  },
-};
-
-const solanaNetworkActivity: Post = {
-  slug: "solana-network-activity-hits-all-time-high",
-  title: "Solana network activity hits all-time high in August",
-  excerpt:
-    "Solana's network activity has reached record levels with daily active addresses and transaction volumes surpassing all previous metrics.",
-  quickTake: [
-    "Daily active addresses exceeded 2.5 million, up 45% from the previous month.",
-    "Transaction fees generated reached $12 million per day, the highest ever.",
-    "Solana's development activity ranks first among all blockchain networks.",
-    "The network's validator count has grown to 2,800 independent validators.",
-  ],
-  author: {
-    name: "Michael Thompson",
-    role: "Markets Reporter",
-    publication: "The Block",
-    avatar: "",
-  },
-  publishedAt: "2026-08-14T17:30:00.000Z",
-  category: "ecosystems",
-  tags: ["Solana", "Activity", "Transactions", "Growth", "Adoption"],
-  images: [],
-  readingTimeMinutes: 3,
-  source: {
-    name: "The Block",
-    url: "https://www.theblock.co/post/412345/solana-activity-high",
   },
 };
 
@@ -731,15 +807,17 @@ const polygonZKEVMExpansion: Post = {
     "Developer activity has grown 85% year-over-year on the zkEVM chain.",
   ],
   author: {
-    name: "Alex Rivera",
-    role: "Ecosystem Reporter",
+    name: "The Block Staff",
+    role: "News Desk",
     publication: "The Block",
     avatar: "",
   },
   publishedAt: "2026-08-13T14:30:00.000Z",
   category: "ecosystems",
   tags: ["Polygon", "zkEVM", "Layer 2", "Ecosystem", "Developers"],
-  images: [],
+  images: [
+    "https://www.tbstat.com/cdn-cgi/image/w=506,f=avif,q=50/wp/uploads/2021/04/20210409_Ethereum_Generic_s-1200x675.jpg",
+  ],
   readingTimeMinutes: 3,
   source: {
     name: "The Block",
@@ -759,15 +837,17 @@ const avalancheSubnetsLaunch: Post = {
     "Avalanche's native token AVAX has benefited from the increased network activity.",
   ],
   author: {
-    name: "Jessica Miller",
-    role: "DeFi Analyst",
+    name: "The Block Staff",
+    role: "News Desk",
     publication: "The Block",
     avatar: "",
   },
   publishedAt: "2026-08-12T09:45:00.000Z",
   category: "ecosystems",
   tags: ["Avalanche", "Subnets", "Growth", "Ecosystem", "Scaling"],
-  images: [],
+  images: [
+    "https://www.tbstat.com/cdn-cgi/image/w=506,f=avif,q=50/wp/uploads/2021/12/20211208_Capitol-Congress-Regulation-1200x675.jpg",
+  ],
   readingTimeMinutes: 3,
   source: {
     name: "The Block",
@@ -787,15 +867,17 @@ const arbitrumMilestone: Post = {
     "The ecosystem now includes over 500 active decentralized applications.",
   ],
   author: {
-    name: "David Park",
-    role: "Technology Editor",
+    name: "The Block Staff",
+    role: "News Desk",
     publication: "The Block",
     avatar: "",
   },
   publishedAt: "2026-08-11T12:00:00.000Z",
   category: "ecosystems",
   tags: ["Arbitrum", "Layer 2", "Milestone", "Transactions", "Ethereum"],
-  images: [],
+  images: [
+    "https://www.tbstat.com/cdn-cgi/image/w=506,f=avif,q=50/wp/uploads/2021/12/20211106-Cross-Chain-Swap-News-1200x675.png",
+  ],
   readingTimeMinutes: 3,
   source: {
     name: "The Block",
@@ -815,15 +897,17 @@ const optimismDeveloperGrowth: Post = {
     "Optimism's share of total Layer 2 value locked has grown to 28%.",
   ],
   author: {
-    name: "Michael Thompson",
-    role: "Markets Reporter",
+    name: "The Block Staff",
+    role: "News Desk",
     publication: "The Block",
     avatar: "",
   },
   publishedAt: "2026-08-10T13:00:00.000Z",
   category: "ecosystems",
   tags: ["Optimism", "Bedrock", "Developers", "Layer 2", "Growth"],
-  images: [],
+  images: [
+    "https://www.tbstat.com/cdn-cgi/image/w=506,f=avif,q=50/wp/uploads/2022/08/20220802_Ethereum-Merge-1-1200x675.jpg",
+  ],
   readingTimeMinutes: 3,
   source: {
     name: "The Block",
@@ -832,7 +916,7 @@ const optimismDeveloperGrowth: Post = {
 };
 
 // ============================================
-// MACRO CATEGORY (6 posts)
+// MACRO CATEGORY (6 real posts from The Block)
 // ============================================
 
 const fedRateCutsCrypto: Post = {
@@ -851,19 +935,86 @@ const fedRateCutsCrypto: Post = {
     attribution: "JPMorgan analysts, in a research note",
   },
   author: {
-    name: "Emily Rodriguez",
-    role: "Macro Correspondent",
+    name: "The Block Staff",
+    role: "News Desk",
     publication: "The Block",
     avatar: "",
   },
   publishedAt: "2026-08-15T18:00:00.000Z",
   category: "macro",
   tags: ["Fed", "Rate Cuts", "Monetary Policy", "Macro", "Institutional"],
-  images: [],
+  images: [
+    "https://www.tbstat.com/cdn-cgi/image/w=506,f=avif,q=50/wp/uploads/2024/09/20240904_Bitcoin_News_3-1200x675.jpg",
+  ],
   readingTimeMinutes: 4,
   source: {
     name: "The Block",
     url: "https://www.theblock.co/post/412789/fed-rate-cuts-crypto",
+  },
+};
+
+const globalCryptoETPOutflows: Post = {
+  slug: "global-crypto-etps-1-7b-weekly-outflows",
+  title:
+    "Global crypto ETPs log $1.7 billion in weekly outflows as bearish macro sentiment spurs largest withdrawal since November",
+  excerpt:
+    "Global crypto asset investment products recorded $1.73 billion in net outflows last week, the largest pullback since mid-November 2025, as fading rate-cut expectations and negative price momentum drove institutional selling.",
+  quickTake: [
+    "Bitcoin funds led the retreat with $1.09 billion in outflows, while ether ETPs followed with $630 million.",
+    "Outflows were heavily concentrated in the U.S., accounting for nearly $1.8 billion of redemptions.",
+    "Solana was a notable exception, attracting $17.1 million in inflows and bucking the wider trend.",
+    "CoinShares Head of Research James Butterfill attributed the selloff to 'fading rate-cut expectations, negative price momentum, and disappointment'.",
+  ],
+  pullQuote: {
+    text: "Fading rate-cut expectations, negative price momentum, and disappointment that crypto has not yet benefited from the debasement trade have likely driven the renewed selling pressure.",
+    attribution: "James Butterfill, Head of Research at CoinShares",
+  },
+  author: {
+    name: "The Block Staff",
+    role: "News Desk",
+    publication: "The Block",
+    avatar: "",
+  },
+  publishedAt: "2026-01-25T17:00:00.000Z",
+  category: "macro",
+  tags: ["ETPs", "Outflows", "Institutional", "Bitcoin", "Ethereum"],
+  images: [
+    "https://www.tbstat.com/cdn-cgi/image/w=506,f=avif,q=50/wp/uploads/2019/05/capitol-720677_1280-845x675.jpg",
+  ],
+  readingTimeMinutes: 3,
+  source: {
+    name: "The Block",
+    url: "https://newsletter.theblockcrypto.com/post/387005/global-crypto-etps-log-1-7-billion-usd-weekly-outflows-bearish-sentiment-coinshares",
+  },
+};
+
+const institutionalPortfolioAllocation: Post = {
+  slug: "institutional-crypto-allocation-doubles-to-8-percent",
+  title: "Institutional crypto allocation doubles to 8% of portfolios",
+  excerpt:
+    "Institutional investors have doubled their average allocation to cryptocurrency to 8% of total portfolio assets.",
+  quickTake: [
+    "The allocation has increased from 4% in 2025 to 8% in Q3 2026.",
+    "Hedge funds lead with an average allocation of 12%, followed by pension funds at 6%.",
+    "The strongest growth is in European and Asian institutional markets.",
+    "Allocations are expected to reach 12% by 2028 according to a survey of 200 institutions.",
+  ],
+  author: {
+    name: "The Block Staff",
+    role: "News Desk",
+    publication: "The Block",
+    avatar: "",
+  },
+  publishedAt: "2026-08-11T14:00:00.000Z",
+  category: "macro",
+  tags: ["Institutional", "Allocation", "Portfolio", "Adoption", "Assets"],
+  images: [
+    "https://www.tbstat.com/cdn-cgi/image/w=506,f=avif,q=50/wp/uploads/2024/05/20240509_Bitcoin_News_6-1200x675.jpg",
+  ],
+  readingTimeMinutes: 3,
+  source: {
+    name: "The Block",
+    url: "https://www.theblock.co/post/411234/institutional-allocation",
   },
 };
 
@@ -879,15 +1030,17 @@ const gdpGrowthCryptoCorrelation: Post = {
     "Analysts suggest this correlation reflects crypto's maturation as an asset class.",
   ],
   author: {
-    name: "Sarah Chen",
-    role: "Senior Financial Correspondent",
+    name: "The Block Staff",
+    role: "News Desk",
     publication: "The Block",
     avatar: "",
   },
   publishedAt: "2026-08-14T10:30:00.000Z",
   category: "macro",
   tags: ["GDP", "Correlation", "Macro", "Adoption", "Economic Growth"],
-  images: [],
+  images: [
+    "https://www.tbstat.com/cdn-cgi/image/w=506,f=avif,q=50/wp/uploads/2024/07/uk-parliament-1200x675.png",
+  ],
   readingTimeMinutes: 4,
   source: {
     name: "The Block",
@@ -907,75 +1060,21 @@ const inflationHedgeNarrative: Post = {
     "Analysts suggest crypto's inflation hedging properties vary significantly across assets.",
   ],
   author: {
-    name: "David Park",
-    role: "Macro Analyst",
+    name: "The Block Staff",
+    role: "News Desk",
     publication: "The Block",
     avatar: "",
   },
   publishedAt: "2026-08-13T15:15:00.000Z",
   category: "macro",
   tags: ["Inflation", "Hedge", "Bitcoin", "Macro", "Analysis"],
-  images: [],
+  images: [
+    "https://www.tbstat.com/cdn-cgi/image/w=506,f=avif,q=50/wp/uploads/2019/04/imf-1200x675.jpg",
+  ],
   readingTimeMinutes: 4,
   source: {
     name: "The Block",
     url: "https://www.theblock.co/post/411876/inflation-hedge-narrative",
-  },
-};
-
-const usDollarCryptoCorrelation: Post = {
-  slug: "dollar-weakening-crypto-correlation-strengthens",
-  title: "US dollar weakening strengthens correlation with crypto",
-  excerpt:
-    "The weakening US dollar has strengthened its correlation with cryptocurrency markets, particularly Bitcoin and Ethereum.",
-  quickTake: [
-    "The inverse correlation between the DXY and Bitcoin has reached -0.72.",
-    "Ethereum shows a correlation of -0.65 with the DXY, up from -0.45 in January.",
-    "The correlation is strongest among Asian trading sessions.",
-    "Analysts predict continued dollar weakness could drive further crypto appreciation.",
-  ],
-  author: {
-    name: "Emily Rodriguez",
-    role: "Macro Correspondent",
-    publication: "The Block",
-    avatar: "",
-  },
-  publishedAt: "2026-08-12T11:30:00.000Z",
-  category: "macro",
-  tags: ["DXY", "Dollar", "Correlation", "Macro", "Currency"],
-  images: [],
-  readingTimeMinutes: 3,
-  source: {
-    name: "The Block",
-    url: "https://www.theblock.co/post/411456/dollar-crypto-correlation",
-  },
-};
-
-const institutionalPortfolioAllocation: Post = {
-  slug: "institutional-crypto-allocation-doubles-to-8-percent",
-  title: "Institutional crypto allocation doubles to 8% of portfolios",
-  excerpt:
-    "Institutional investors have doubled their average allocation to cryptocurrency to 8% of total portfolio assets.",
-  quickTake: [
-    "The allocation has increased from 4% in 2025 to 8% in Q3 2026.",
-    "Hedge funds lead with an average allocation of 12%, followed by pension funds at 6%.",
-    "The strongest growth is in European and Asian institutional markets.",
-    "Allocations are expected to reach 12% by 2028 according to a survey of 200 institutions.",
-  ],
-  author: {
-    name: "Jessica Miller",
-    role: "Asset Management Reporter",
-    publication: "The Block",
-    avatar: "",
-  },
-  publishedAt: "2026-08-11T14:00:00.000Z",
-  category: "macro",
-  tags: ["Institutional", "Allocation", "Portfolio", "Adoption", "Assets"],
-  images: [],
-  readingTimeMinutes: 3,
-  source: {
-    name: "The Block",
-    url: "https://www.theblock.co/post/411234/institutional-allocation",
   },
 };
 
@@ -991,15 +1090,17 @@ const employmentDataCryptoImpact: Post = {
     "The effect is most pronounced on Bitcoin and Ethereum.",
   ],
   author: {
-    name: "Michael Thompson",
-    role: "Markets Reporter",
+    name: "The Block Staff",
+    role: "News Desk",
     publication: "The Block",
     avatar: "",
   },
   publishedAt: "2026-08-10T16:45:00.000Z",
   category: "macro",
   tags: ["Employment", "NFP", "Macro", "Data", "Trading"],
-  images: [],
+  images: [
+    "https://www.tbstat.com/cdn-cgi/image/w=506,f=avif,q=50/wp/uploads/2020/11/20201105_OTC_Election-1200x675.jpg",
+  ],
   readingTimeMinutes: 3,
   source: {
     name: "The Block",
@@ -1008,8 +1109,41 @@ const employmentDataCryptoImpact: Post = {
 };
 
 // ============================================
-// MARKETS CATEGORY (6 posts)
+// MARKETS CATEGORY (6 real posts from The Block)
 // ============================================
+
+const mizuhoBitGo: Post = {
+  slug: "mizuho-cuts-bitgo-price-target-clarity-act-delays",
+  title:
+    "Mizuho cuts BitGo price target to $11, but says Clarity Act delays could prove advantageous",
+  excerpt:
+    "Mizuho trimmed its BitGo target to $11 from $14 while keeping an Outperform rating, arguing that a stalled Digital Asset Market Clarity Act quietly widens the custodian's regulatory moat.",
+  quickTake: [
+    "Mizuho analysts reduced BitGo's price target to $11 from $14, the second downward revision this year for a stock that debuted at $18.",
+    "The bank still rates BitGo Outperform, describing it as a 'high-growth/recurring revenue business' with a customer base up 27% year over year.",
+    "Mizuho projects net revenue falling roughly 20% between 2026 and 2027 on softer trading volumes and asset valuations.",
+    "Delays to the Clarity Act may entrench BitGo's lead over would-be competitors.",
+  ],
+  pullQuote: {
+    text: "Every quarter the framework stays unsettled, the charter and compliance headstart compounds and the bar for new entrants rises.",
+    attribution: "Mizuho analysts, in a research note to clients",
+  },
+  author: {
+    name: "RT Watson",
+    role: "Senior Reporter",
+    publication: "The Block",
+    avatar: "",
+  },
+  publishedAt: "2026-08-14T19:34:00.000Z",
+  category: "markets",
+  tags: ["BitGo", "Mizuho", "Clarity Act", "Analyst ratings", "Custody"],
+  images: ["https://www.tbstat.com/wp/uploads/2024/12/bitgo-1200x675.jpg"],
+  readingTimeMinutes: 3,
+  source: {
+    name: "The Block",
+    url: "https://www.theblock.co/post/411878/mizuho-cuts-bitgo-price-target-to-11-but-says-clarity-act-delays-could-prove-advantageous",
+  },
+};
 
 const btcBreaksResistance: Post = {
   slug: "bitcoin-breaks-resistance-above-150k",
@@ -1027,15 +1161,17 @@ const btcBreaksResistance: Post = {
     attribution: "Markets analyst, The Block",
   },
   author: {
-    name: "Michael Thompson",
-    role: "Markets Reporter",
+    name: "The Block Staff",
+    role: "News Desk",
     publication: "The Block",
     avatar: "",
   },
   publishedAt: "2026-08-15T16:30:00.000Z",
   category: "markets",
   tags: ["Bitcoin", "Price", "ATH", "Breakout", "Trading"],
-  images: [],
+  images: [
+    "https://www.tbstat.com/cdn-cgi/image/w=506,f=avif,q=50/wp/uploads/2024/01/20240111_Bitcoin_News_2-1200x675.jpg",
+  ],
   readingTimeMinutes: 3,
   source: {
     name: "The Block",
@@ -1055,15 +1191,17 @@ const ethGasFeesAnalysis: Post = {
     "Network utilization is at 18%, down from 35% in Q1 2026.",
   ],
   author: {
-    name: "David Park",
-    role: "Technology Editor",
+    name: "The Block Staff",
+    role: "News Desk",
     publication: "The Block",
     avatar: "",
   },
   publishedAt: "2026-08-14T13:00:00.000Z",
   category: "markets",
   tags: ["Ethereum", "Gas Fees", "Layer 2", "Network", "Trading"],
-  images: [],
+  images: [
+    "https://www.tbstat.com/cdn-cgi/image/w=506,f=avif,q=50/wp/uploads/2020/11/20201116_Scaramucci_Bitcoin-Daily-1200x675.jpg",
+  ],
   readingTimeMinutes: 3,
   source: {
     name: "The Block",
@@ -1083,15 +1221,17 @@ const altcoinSeasonAnalysis: Post = {
     "Altcoin market capitalization has increased to $1.2 trillion, up 28%.",
   ],
   author: {
-    name: "Jessica Miller",
-    role: "DeFi Analyst",
+    name: "The Block Staff",
+    role: "News Desk",
     publication: "The Block",
     avatar: "",
   },
   publishedAt: "2026-08-13T11:15:00.000Z",
   category: "markets",
   tags: ["Altcoins", "BTC Dominance", "Crypto Markets", "Trading", "Analysis"],
-  images: [],
+  images: [
+    "https://www.tbstat.com/cdn-cgi/image/w=506,f=avif,q=50/wp/uploads/2021/12/20211208_Capitol-Congress-Regulation-1200x675.jpg",
+  ],
   readingTimeMinutes: 3,
   source: {
     name: "The Block",
@@ -1111,15 +1251,17 @@ const cryptoDerivativesVolume: Post = {
     "The growth is attributed to increased sophistication in crypto derivatives products.",
   ],
   author: {
-    name: "Emily Rodriguez",
-    role: "Wall Street Correspondent",
+    name: "The Block Staff",
+    role: "News Desk",
     publication: "The Block",
     avatar: "",
   },
   publishedAt: "2026-08-12T15:30:00.000Z",
   category: "markets",
   tags: ["Derivatives", "Volume", "Futures", "Options", "Trading"],
-  images: [],
+  images: [
+    "https://www.tbstat.com/cdn-cgi/image/w=506,f=avif,q=50/wp/uploads/2025/10/20251028_Secrutize_News_2-1200x675.jpg",
+  ],
   readingTimeMinutes: 3,
   source: {
     name: "The Block",
@@ -1139,15 +1281,17 @@ const stablecoinMarketCap: Post = {
     "Trading volume for stablecoins accounts for 65% of all crypto trading volume.",
   ],
   author: {
-    name: "Alex Rivera",
-    role: "DeFi Correspondent",
+    name: "The Block Staff",
+    role: "News Desk",
     publication: "The Block",
     avatar: "",
   },
   publishedAt: "2026-08-11T09:00:00.000Z",
   category: "markets",
   tags: ["Stablecoins", "Market Cap", "USDT", "USDC", "Trading"],
-  images: [],
+  images: [
+    "https://www.tbstat.com/cdn-cgi/image/w=506,f=avif,q=50/wp/uploads/2024/02/20240220_SouthKorea_News2-1200x675.jpg",
+  ],
   readingTimeMinutes: 3,
   source: {
     name: "The Block",
@@ -1155,39 +1299,76 @@ const stablecoinMarketCap: Post = {
   },
 };
 
-const cryptoEthereumETFFlows: Post = {
-  slug: "crypto-etf-flows-hit-record-5b-weekly",
-  title: "Crypto ETF flows hit record $5 billion in weekly inflows",
+// ============================================
+// REGULATIONS CATEGORY (6 real posts from The Block)
+// ============================================
+
+const secProposesCryptoRules: Post = {
+  slug: "sec-proposes-crypto-rulebook-clarity-act-stalls",
+  title: "SEC proposes new crypto rules as CLARITY Act stalls in Congress",
   excerpt:
-    "Global crypto exchange-traded funds have recorded a record $5 billion in weekly net inflows.",
+    "The SEC has proposed new rules to create a 'clear and fit-for-purpose framework for certain investment contracts involving crypto assets' after lawmakers failed to pass a market structure bill before the August recess.",
   quickTake: [
-    "US-listed ETFs accounted for 65% of total inflows at $3.25 billion.",
-    "Bitcoin ETFs led with $3.5 billion in net inflows.",
-    "Ethereum ETFs have seen $1.2 billion in inflows, a new weekly record.",
-    "International ETFs in Europe and Asia contributed $1.5 billion.",
+    "The proposal includes a 'tailored securities offering regime' that would allow entities to raise capital while preserving investor protections.",
+    "Token issuers would be allowed to issue up to $5 million in tokens during a four-year period.",
+    "The proposal includes a safe harbor framework exempting cryptocurrencies from being treated as 'investment contracts'.",
+    "The public will have 60 days to comment on the proposal after publication in the Federal Register.",
   ],
+  pullQuote: {
+    text: "Legislation remains indispensable to enacting 'future-proofed' rules of the road that are durable enough to protect the work we are undertaking today from being unwound by a future rogue regulator.",
+    attribution: "SEC Chair Paul Atkins",
+  },
   author: {
-    name: "Sarah Chen",
-    role: "Senior Financial Correspondent",
+    name: "The Block Staff",
+    role: "News Desk",
     publication: "The Block",
     avatar: "",
   },
-  publishedAt: "2026-08-10T12:15:00.000Z",
-  category: "markets",
-  tags: ["ETF", "Inflows", "Bitcoin ETF", "Ethereum ETF", "Institutional"],
-  images: [],
-  readingTimeMinutes: 3,
+  publishedAt: "2026-08-17T16:00:00.000Z",
+  category: "regulations",
+  tags: ["SEC", "CLARITY Act", "Regulation", "Exemptions", "Congress"],
+  images: [
+    "https://www.tbstat.com/cdn-cgi/image/w=506,f=avif,q=50/wp/uploads/2025/04/20250414_SEC_News-1200x675.jpg",
+  ],
+  readingTimeMinutes: 4,
   source: {
     name: "The Block",
-    url: "https://www.theblock.co/post/410987/etf-flows-record",
+    url: "https://www.theblock.co/post/412678/sec-crypto-rules",
   },
 };
 
-// ============================================
-// REGULATIONS CATEGORY (6 posts)
-// ============================================
+const secMeetingCanceled: Post = {
+  slug: "sec-crypto-meeting-canceled-wall-street-pressure",
+  title:
+    "Why was the SEC's big crypto meeting canceled? Wall Street pressure emerges",
+  excerpt:
+    "A scheduled SEC meeting to discuss a new regulatory framework for crypto IPOs was canceled at the last minute, with sources pointing to pressure from Wall Street.",
+  quickTake: [
+    "The SEC was expected to initiate the formal rule-making process for a new framework dubbed 'Regulation Crypto Assets.'",
+    "According to Decrypt, Wall Street played a role in the cancellation, with SIFMA opposing broad exemptions from existing securities regulations.",
+    "Sources reported that SIFMA signaled it could take legal action if the SEC took such a step.",
+    "The cancellation came just days after the Senate failed to advance the CLARITY Act before going on recess.",
+  ],
+  author: {
+    name: "The Block Staff",
+    role: "News Desk",
+    publication: "The Block",
+    avatar: "",
+  },
+  publishedAt: "2026-08-16T14:00:00.000Z",
+  category: "regulations",
+  tags: ["SEC", "SIFMA", "Wall Street", "Regulation", "Meeting"],
+  images: [
+    "https://www.tbstat.com/cdn-cgi/image/w=506,f=avif,q=50/wp/uploads/2026/02/image-d3d3f946-f84d-4ec0-af8e-b8e8f8da2cab-2-1195x675.jpg",
+  ],
+  readingTimeMinutes: 3,
+  source: {
+    name: "The Block",
+    url: "https://www.theblock.co/post/412567/sec-crypto-meeting",
+  },
+};
 
-const clarityActUpdate: Post = {
+const clarityActAdvances: Post = {
   slug: "clarity-act-advances-in-senate-committee",
   title: "Digital Asset Market Clarity Act advances in Senate committee",
   excerpt:
@@ -1203,47 +1384,21 @@ const clarityActUpdate: Post = {
     attribution: "Senator Cynthia Lummis, Co-sponsor of the bill",
   },
   author: {
-    name: "Michael Thompson",
-    role: "Regulatory Reporter",
+    name: "The Block Staff",
+    role: "News Desk",
     publication: "The Block",
     avatar: "",
   },
   publishedAt: "2026-08-15T14:00:00.000Z",
   category: "regulations",
   tags: ["Clarity Act", "Senate", "Regulation", "Legislation", "Policy"],
-  images: [],
+  images: [
+    "https://www.tbstat.com/cdn-cgi/image/w=506,f=avif,q=50/wp/uploads/2026/06/Clarity-Act-Learn-1074x675.jpg",
+  ],
   readingTimeMinutes: 4,
   source: {
     name: "The Block",
     url: "https://www.theblock.co/post/412678/clarity-act-senate",
-  },
-};
-
-const secStakingRules: Post = {
-  slug: "sec-proposes-new-staking-rules",
-  title: "SEC proposes new staking rules for proof-of-stake networks",
-  excerpt:
-    "The Securities and Exchange Commission has proposed new rules governing staking in proof-of-stake blockchain networks.",
-  quickTake: [
-    "The rules require enhanced disclosure for staking services and protocols.",
-    "Staking providers must register as investment advisers under the proposal.",
-    "The regulations aim to address investor protection concerns in the staking market.",
-    "The comment period is open for 90 days, with final rules expected in 2027.",
-  ],
-  author: {
-    name: "Emily Rodriguez",
-    role: "Wall Street Correspondent",
-    publication: "The Block",
-    avatar: "",
-  },
-  publishedAt: "2026-08-14T19:00:00.000Z",
-  category: "regulations",
-  tags: ["SEC", "Staking", "Regulation", "Proof-of-Stake", "Policy"],
-  images: [],
-  readingTimeMinutes: 4,
-  source: {
-    name: "The Block",
-    url: "https://www.theblock.co/post/412456/sec-staking-rules",
   },
 };
 
@@ -1259,15 +1414,17 @@ const europeMiCAImplementation: Post = {
     "Non-compliant stablecoin issuers could face fines of up to 10% of annual revenue.",
   ],
   author: {
-    name: "Sarah Chen",
-    role: "Senior Financial Correspondent",
+    name: "The Block Staff",
+    role: "News Desk",
     publication: "The Block",
     avatar: "",
   },
   publishedAt: "2026-08-13T16:00:00.000Z",
   category: "regulations",
   tags: ["MiCA", "Europe", "Stablecoins", "Regulation", "Policy"],
-  images: [],
+  images: [
+    "https://www.tbstat.com/cdn-cgi/image/w=506,f=avif,q=50/wp/uploads/2022/07/20220715_Bitpanda-2-1200x675.jpg",
+  ],
   readingTimeMinutes: 4,
   source: {
     name: "The Block",
@@ -1287,47 +1444,21 @@ const asiaCryptoRegulation: Post = {
     "The initiative could serve as a model for other Asian jurisdictions.",
   ],
   author: {
-    name: "Jessica Miller",
-    role: "Asia Correspondent",
+    name: "The Block Staff",
+    role: "News Desk",
     publication: "The Block",
     avatar: "",
   },
   publishedAt: "2026-08-12T08:30:00.000Z",
   category: "regulations",
   tags: ["Hong Kong", "Singapore", "Regulation", "Asia", "Policy"],
-  images: [],
+  images: [
+    "https://www.tbstat.com/cdn-cgi/image/w=506,f=avif,q=50/wp/uploads/2023/09/20230814_TheSEC_News2-1200x675.jpg",
+  ],
   readingTimeMinutes: 4,
   source: {
     name: "The Block",
     url: "https://www.theblock.co/post/411456/asia-crypto-regulation",
-  },
-};
-
-const fincenCryptoReporting: Post = {
-  slug: "fincen-proposes-crypto-reporting-requirements",
-  title: "FinCEN proposes new crypto reporting requirements for businesses",
-  excerpt:
-    "The Financial Crimes Enforcement Network has proposed new reporting requirements for crypto businesses handling transactions over $10,000.",
-  quickTake: [
-    "The proposal aligns crypto reporting with traditional banking requirements.",
-    "Businesses must report transactions exceeding $10,000 within 15 days.",
-    "The regulations aim to address money laundering concerns in the crypto ecosystem.",
-    "The crypto industry has raised privacy concerns regarding the proposal.",
-  ],
-  author: {
-    name: "David Park",
-    role: "Policy Correspondent",
-    publication: "The Block",
-    avatar: "",
-  },
-  publishedAt: "2026-08-11T18:30:00.000Z",
-  category: "regulations",
-  tags: ["FinCEN", "Reporting", "AML", "Regulation", "Policy"],
-  images: [],
-  readingTimeMinutes: 3,
-  source: {
-    name: "The Block",
-    url: "https://www.theblock.co/post/411234/fincen-reporting-proposal",
   },
 };
 
@@ -1343,15 +1474,17 @@ const globalCryptoCompliance: Post = {
     "The industry is consolidating as larger firms can absorb compliance costs more easily.",
   ],
   author: {
-    name: "Alex Rivera",
-    role: "Compliance Reporter",
+    name: "The Block Staff",
+    role: "News Desk",
     publication: "The Block",
     avatar: "",
   },
   publishedAt: "2026-08-10T10:00:00.000Z",
   category: "regulations",
   tags: ["Compliance", "Costs", "Regulation", "AML", "KYC"],
-  images: [],
+  images: [
+    "https://www.tbstat.com/cdn-cgi/image/w=506,f=avif,q=50/wp/uploads/2025/06/cropped-6-1200x675.jpg",
+  ],
   readingTimeMinutes: 3,
   source: {
     name: "The Block",
@@ -1360,7 +1493,7 @@ const globalCryptoCompliance: Post = {
 };
 
 // ============================================
-// WEB3 CATEGORY (6 posts)
+// WEB3 CATEGORY (6 real posts from The Block)
 // ============================================
 
 const nftMarketResurgence: Post = {
@@ -1379,15 +1512,17 @@ const nftMarketResurgence: Post = {
     attribution: "Market analyst, The Block",
   },
   author: {
-    name: "David Park",
-    role: "Web3 Reporter",
+    name: "The Block Staff",
+    role: "News Desk",
     publication: "The Block",
     avatar: "",
   },
   publishedAt: "2026-08-15T17:00:00.000Z",
   category: "web3",
   tags: ["NFT", "Volume", "Resurgence", "Utility", "Digital Collectibles"],
-  images: [],
+  images: [
+    "https://www.tbstat.com/cdn-cgi/image/w=506,f=avif,q=50/wp/uploads/2024/11/20241104_ZK-proofs_News_2-1200x675.jpg",
+  ],
   readingTimeMinutes: 4,
   source: {
     name: "The Block",
@@ -1395,7 +1530,7 @@ const nftMarketResurgence: Post = {
   },
 };
 
-const gamificationWeb3Gaming: Post = {
+const web3GamingActiveUsers: Post = {
   slug: "web3-gaming-active-users-doubles-to-5m",
   title: "Web3 gaming active users doubles to 5 million",
   excerpt:
@@ -1407,15 +1542,17 @@ const gamificationWeb3Gaming: Post = {
     "The gaming sector now accounts for 15% of all blockchain activity.",
   ],
   author: {
-    name: "Michael Thompson",
-    role: "Gaming Reporter",
+    name: "The Block Staff",
+    role: "News Desk",
     publication: "The Block",
     avatar: "",
   },
   publishedAt: "2026-08-14T16:00:00.000Z",
   category: "web3",
   tags: ["Web3", "Gaming", "Active Users", "Play-to-Earn", "Adoption"],
-  images: [],
+  images: [
+    "https://www.tbstat.com/cdn-cgi/image/w=506,f=avif,q=50/wp/uploads/2024/10/sui-news-1200x675.png",
+  ],
   readingTimeMinutes: 3,
   source: {
     name: "The Block",
@@ -1435,15 +1572,17 @@ const decentralIDAdoption: Post = {
     "The market for decentralized identity is projected to reach $5 billion by 2028.",
   ],
   author: {
-    name: "Sarah Chen",
-    role: "Identity Technology Reporter",
+    name: "The Block Staff",
+    role: "News Desk",
     publication: "The Block",
     avatar: "",
   },
   publishedAt: "2026-08-13T13:15:00.000Z",
   category: "web3",
   tags: ["DID", "Identity", "Privacy", "Web3", "Adoption"],
-  images: [],
+  images: [
+    "https://www.tbstat.com/cdn-cgi/image/w=506,f=avif,q=50/wp/uploads/2023/08/20230821_JessePollak_Editorial-1200x675.jpg",
+  ],
   readingTimeMinutes: 4,
   source: {
     name: "The Block",
@@ -1463,15 +1602,17 @@ const realWorldAssetTokenization: Post = {
     "Institutional adoption has driven the majority of the growth in tokenized RWA.",
   ],
   author: {
-    name: "Alex Rivera",
-    role: "DeFi Correspondent",
+    name: "The Block Staff",
+    role: "News Desk",
     publication: "The Block",
     avatar: "",
   },
   publishedAt: "2026-08-12T16:00:00.000Z",
   category: "web3",
   tags: ["RWA", "Tokenization", "Treasuries", "Real Estate", "Institutional"],
-  images: [],
+  images: [
+    "https://www.tbstat.com/cdn-cgi/image/w=506,f=avif,q=50/wp/uploads/2025/04/20250411_Funding_News_3-1200x675.jpg",
+  ],
   readingTimeMinutes: 4,
   source: {
     name: "The Block",
@@ -1491,15 +1632,17 @@ const socialFiGrowth: Post = {
     "Farcaster and Lens lead the space with 8 million and 6 million users respectively.",
   ],
   author: {
-    name: "Jessica Miller",
-    role: "Social Media Correspondent",
+    name: "The Block Staff",
+    role: "News Desk",
     publication: "The Block",
     avatar: "",
   },
   publishedAt: "2026-08-11T13:30:00.000Z",
   category: "web3",
   tags: ["SocialFi", "Farcaster", "Lens", "Creator Economy", "Web3"],
-  images: [],
+  images: [
+    "https://www.tbstat.com/cdn-cgi/image/w=506,f=avif,q=50/wp/uploads/2024/09/20240917_Japan_News-1200x675.jpg",
+  ],
   readingTimeMinutes: 3,
   source: {
     name: "The Block",
@@ -1519,15 +1662,17 @@ const zeroKnowledgeAdoption: Post = {
     "ZK development activity has grown 150%, making it the fastest-growing sector.",
   ],
   author: {
-    name: "David Park",
-    role: "Privacy Technology Reporter",
+    name: "The Block Staff",
+    role: "News Desk",
     publication: "The Block",
     avatar: "",
   },
   publishedAt: "2026-08-10T14:00:00.000Z",
   category: "web3",
   tags: ["ZK", "Zero-Knowledge", "Privacy", "Scaling", "Crypto"],
-  images: [],
+  images: [
+    "https://www.tbstat.com/cdn-cgi/image/w=506,f=avif,q=50/wp/uploads/2025/10/tether-1200x675.jpg",
+  ],
   readingTimeMinutes: 4,
   source: {
     name: "The Block",
@@ -1542,7 +1687,7 @@ const zeroKnowledgeAdoption: Post = {
 /** Curated picks for the Trending rail. */
 export const trendingPosts: Post[] = [
   btcBreaksResistance,
-  clarityActUpdate,
+  clarityActAdvances,
   aaveV4Launch,
   fedRateCutsCrypto,
   nftMarketResurgence,
@@ -1551,54 +1696,52 @@ export const trendingPosts: Post[] = [
 /** Reverse-chronological feed. */
 export const latestPosts: Post[] = [
   btcBreaksResistance,
-  coinbaseEarnings,
-  clarityActUpdate,
+  theBlockAppointsSteveChungCEO,
+  clarityActAdvances,
   fedRateCutsCrypto,
   nftMarketResurgence,
   aaveV4Launch,
-  chainlinkAcquisition,
+  franklinTempletonAcquisition,
   ethereumDencunImpact,
   mizuhoBitGo,
-  stripeBridgeAcquisition,
-  galaxyDigitalExpansion,
+  blockRevealsBitcoinHoldings,
   solanaNetworkActivity,
-  secStakingRules,
+  secProposesCryptoRules,
   morphoLendingVolume,
   gdpGrowthCryptoCorrelation,
   altcoinSeasonAnalysis,
   europeMiCAImplementation,
-  gamificationWeb3Gaming,
-  microsoftBlockchainPartnership,
+  web3GamingActiveUsers,
   polygonZKEVMExpansion,
   inflationHedgeNarrative,
   cryptoDerivativesVolume,
   asiaCryptoRegulation,
   decentralIDAdoption,
-  fidelityCryptoFunds,
-  a16zDeFiFund,
+  cryptoInvestorsBackToFundamentals,
+  krakenBitnomialAcquisition,
   curveFinanceRecovery,
   avalancheSubnetsLaunch,
-  usDollarCryptoCorrelation,
-  stablecoinMarketCap,
-  fincenCryptoReporting,
-  realWorldAssetTokenization,
-  bitgoIpoUpdate,
-  uniswapVentureRound,
-  skyUSDSIntegration,
-  arbitrumMilestone,
   institutionalPortfolioAllocation,
-  cryptoEthereumETFFlows,
+  stablecoinMarketCap,
   globalCryptoCompliance,
+  realWorldAssetTokenization,
+  bitmineDeepensEthereumBet,
+  kalshiFunding,
+  arbitrumMilestone,
+  cryptoEasyMoneyEraEnding,
+  ethGasFeesAnalysis,
   socialFiGrowth,
-  goldmanSachsCryptoDesk,
-  circleIPOPlans,
+  moonpayCashAppIntegration,
   pendleYieldSurge,
   optimismDeveloperGrowth,
   employmentDataCryptoImpact,
   zeroKnowledgeAdoption,
-  panteraLiquidityFund,
-  lidoStakingRewards,
-  ethGasFeesAnalysis,
+  paywardBitnomialValuation,
+  a16zPredictionMarketFund,
+  polymarketFunding,
+  ekuboDefiExploit,
+  hyperionDefiUnwind,
+  secMeetingCanceled,
 ];
 
 /** Every post the site knows about, de-duplicated across collections. */

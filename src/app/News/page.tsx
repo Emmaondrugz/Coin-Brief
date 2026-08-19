@@ -1,22 +1,26 @@
 "use client";
 
+import Image from "next/image";
 import { useRef, useState } from "react";
 import Header from "@/components/header";
 import Ticker from "@/components/ticker";
+import Footer from "@/components/footer";
+import { allPosts, formatPostDate } from "@/lib/blogs";
+
+const categoryOptions = [
+  { label: "All", slug: null },
+  { label: "Business", slug: "business" },
+  { label: "Deals", slug: "deals" },
+  { label: "DeFi", slug: "defi" },
+  { label: "Ecosystems", slug: "ecosystems" },
+  { label: "Macro", slug: "macro" },
+  { label: "Markets", slug: "markets" },
+  { label: "Regulations", slug: "regulations" },
+  { label: "Web3", slug: "web3" },
+] as const;
 
 export default function News() {
-  const categories = [
-    "Business",
-    "Deals",
-    "DeFi",
-    "Ecosystems",
-    "Macro",
-    "Markets",
-    "Regulations",
-    "Web3",
-  ];
-
-  const [activeCategory, setActiveCategory] = useState(categories[0]);
+  const [activeCategory, setActiveCategory] = useState("All");
 
   const scrollContainerRef = useRef<HTMLDivElement | null>(null);
 
@@ -52,8 +56,18 @@ export default function News() {
     }
   };
 
+  const selectedCategory = categoryOptions.find(
+    (category) => category.label === activeCategory,
+  );
+  const posts = allPosts.filter(
+    (post) =>
+      !selectedCategory?.slug || post.category === selectedCategory.slug,
+  );
+
+  console.log(posts);
+
   return (
-    <div className="h-screen w-full bg-white inter">
+    <div className="h-fit w-full bg-white inter">
       <Ticker />
       <Header />
 
@@ -65,8 +79,7 @@ export default function News() {
             flex-col items-start overflow-hidden
             border-x border-gray-200
             px-4 py-4
-            pb-20
-            sm:px-6 sm:pt-10 sm:pb-32
+            sm:px-6 sm:pt-10
           "
         >
           {/* Breadcrumb */}
@@ -90,20 +103,20 @@ export default function News() {
                 scroll-smooth
                 md:mt-10
                 [&::-webkit-scrollbar]:hidden
-                [scrollbar-width:none]
+                scrollbar-none
               "
             >
               <div className="flex min-w-max items-center gap-2">
-                {categories.map((category) => {
-                  const isActive = activeCategory === category;
+                {categoryOptions.map((category) => {
+                  const isActive = activeCategory === category.label;
 
                   return (
                     <button
-                      key={category}
+                      key={category.label}
                       ref={(element) => {
-                        categoryRefs.current[category] = element;
+                        categoryRefs.current[category.label] = element;
                       }}
-                      onClick={() => handleCategoryClick(category)}
+                      onClick={() => handleCategoryClick(category.label)}
                       className={`
                         relative shrink-0 cursor-pointer
                         whitespace-nowrap px-4 py-3
@@ -111,7 +124,7 @@ export default function News() {
                         transition-all duration-300
                       `}
                     >
-                      {category}
+                      {category.label}
 
                       {/* Active category indicator */}
                       <span
@@ -130,6 +143,46 @@ export default function News() {
             </div>
           </div>
         </div>
+
+        {/* News Post grid */}
+        <div className="mx-auto w-full max-w-350 border-x border-gray-200 px-4 pb-20 sm:px-6 sm:pb-32">
+          <div className="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
+            {posts.map((post) => (
+              <a
+                key={post.slug}
+                href={post.source?.url || "#"}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex min-w-0 flex-col gap-3"
+              >
+                <div className="relative aspect-video w-full overflow-hidden bg-gray-100">
+                  <Image
+                    src={post.images[0] || "/noise.avif"}
+                    alt={post.title}
+                    fill
+                    className="object-cover transition-transform duration-300 group-hover:scale-105"
+                    sizes="(max-width: 639px) 100vw, (max-width: 1023px) 50vw, 33vw"
+                  />
+                </div>
+                <div className="flex flex-col gap-1">
+                  <span className="text-xs font-medium uppercase tracking-wide text-gray-500">
+                    {post.category} &bull; {formatPostDate(post.publishedAt)}
+                  </span>
+                  <h2 className="text-base font-medium leading-snug group-hover:underline sm:text-lg">
+                    {post.title}
+                  </h2>
+                  <p className="line-clamp-2 text-sm leading-6 text-gray-600">
+                    {post.excerpt}
+                  </p>
+                </div>
+              </a>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <div className="w-full bg-black">
+        <Footer />
       </div>
     </div>
   );
