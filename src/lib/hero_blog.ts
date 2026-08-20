@@ -109,44 +109,65 @@ export type Post = {
    */
   images: string[];
   readingTimeMinutes: number;
+  content?: string[];
   source?: PostSource;
 };
 
-export const mizuhoBitGo: Post = {
-  slug: "mizuho-cuts-bitgo-price-target-clarity-act-delays",
-  title: "Mizuho cuts BitGo price target to $11",
+export const trumpDigitalAssetRegulations: Post = {
+  slug: "trump-035-crypto-tax-deposit-rule-digital-asset-regulations",
+  title: "Trump Introduces 0.35% Crypto Tax Deposit Rule...",
   excerpt:
-    "Mizuho trimmed its BitGo target to $11 from $14 while keeping an Outperform rating, arguing that a stalled Digital Asset Market Clarity Act quietly widens the custodian's regulatory moat.",
+    "President Donald Trump renewed his push for clearer cryptocurrency regulation while announcing a proposed 0.35% federal tax deposit requirement for qualifying cryptocurrency withdrawals.",
   quickTake: [
-    "Mizuho analysts reduced BitGo's price target to $11 from $14, the second downward revision this year for a stock that debuted at $18.",
-    'The bank still rates BitGo Outperform, describing it as a "high-growth/recurring revenue business" with a customer base up 27% year over year.',
-    "Mizuho projects net revenue falling roughly 20% between 2026 and 2027 on softer trading volumes and asset valuations.",
-    "Because BitGo already operates the first federally chartered digital asset trust bank owned by a public company, delays to the Clarity Act may entrench its lead over would-be competitors.",
+    "Qualifying cryptocurrency withdrawals would require a separate deposit equal to 0.35% of the applicable capital-gains amount.",
+    "The deposit would be credited toward the taxpayer's federal capital-gains obligation rather than deducted from the cryptocurrency being withdrawn.",
+    "Trump urged Congress to advance the CLARITY Act and discussed Hyperliquid and the CFTC.",
+    "The proposed mechanism would create a new compliance step for exchanges, platforms, and investors.",
   ],
   pullQuote: {
-    text: "Every quarter the framework stays unsettled, the charter and compliance headstart compounds and the bar for new entrants rises.",
-    attribution: "Mizuho analysts, in a research note to clients",
+    text: "Clearer rules for digital assets are essential to maintaining U.S. leadership in financial technology.",
+    attribution: "Donald Trump, at the White House meeting",
   },
   author: {
-    name: "RT Watson",
-    role: "Senior Reporter",
+    name: "Crypto Brief Staff",
+    role: "White House Correspondent",
     publication: "The Block",
     avatar: "",
   },
-  publishedAt: "2026-08-14T19:34:00.000Z",
-  category: "markets",
-  tags: ["BitGo", "Mizuho", "Clarity Act", "Analyst ratings", "Custody"],
-  // Placeholder — add lead artwork and any inline figures here.
-  images: [],
-  readingTimeMinutes: 3,
+  publishedAt: "2026-08-19T18:00:00.000Z",
+  category: "regulations",
+  tags: [
+    "Donald Trump",
+    "Crypto Tax",
+    "CLARITY Act",
+    "SEC",
+    "CFTC",
+    "Regulation",
+  ],
+  images: ["/trump_blog2.jpeg"],
+  readingTimeMinutes: 8,
+  content: [
+    "President Donald Trump renewed his push for clearer cryptocurrency regulation during a White House meeting with cryptocurrency and technology leaders on August 19, 2026, while announcing a new 0.35% federal tax deposit requirement for qualifying cryptocurrency withdrawals.",
+    "Under the new framework, eligible IPv4 cryptocurrency withdrawals would require a separate deposit equal to 0.35% of the applicable capital-gains amount. The deposit would be made separately from the cryptocurrency being withdrawn and credited toward the taxpayer’s federal capital-gains tax obligation.",
+    "The mechanism is designed to separate the cryptocurrency withdrawal from its associated tax obligation. Rather than automatically deducting the amount from the cryptocurrency being withdrawn, taxpayers would be required to make the applicable deposit separately through the underlying cryptocurrency account before the withdrawal could be cleared under the new rules.",
+    "The development comes as Trump urged Congress to advance the CLARITY Act, arguing that clearer rules for digital assets are essential to maintaining U.S. leadership in financial technology and preventing cryptocurrency innovation and businesses from moving overseas.",
+    "The CLARITY Act has become a major focus for the cryptocurrency industry because it seeks to establish clearer regulatory boundaries for digital assets and crypto-related businesses. One of the industry’s longstanding concerns has been uncertainty over the respective roles of the Securities and Exchange Commission (SEC) and the Commodity Futures Trading Commission (CFTC).",
+    "Greater regulatory clarity could make it easier for cryptocurrency exchanges, trading platforms and blockchain companies to determine which regulations apply to their activities. Supporters of the legislation argue that clearer rules could encourage investment, promote innovation and increase institutional participation in the U.S. digital-asset market.",
+    "Trump also discussed developments involving Hyperliquid and the CFTC, highlighting the administration’s interest in bringing major digital-asset activity into a clearer U.S. regulatory framework.",
+    "The White House meeting brought together representatives from major cryptocurrency and financial-technology companies, including Coinbase, Kraken, Ripple, Gemini and Robinhood, alongside senior U.S. financial regulators.",
+    "The broader message from the meeting was consistent with Trump’s goal of establishing the United States as a leading destination for cryptocurrency and blockchain businesses. His administration has increasingly presented digital assets not simply as a regulatory issue, but as an area where the United States can compete for investment, technological development and financial innovation.",
+    "For cryptocurrency investors, the new tax mechanism introduces an additional compliance requirement for qualifying cryptocurrency withdrawals. Exchanges and digital-asset platforms would need to account for the applicable 0.35% federal tax deposit, document the associated capital gains and ensure that the required deposit is completed separately from the cryptocurrency withdrawal.",
+    "Investors should therefore closely monitor developments surrounding the CLARITY Act, the SEC, the CFTC and additional guidance on cryptocurrency taxation and withdrawal requirements.",
+    "The White House meeting represents another significant development in Washington’s evolving approach to digital assets. By combining new tax-compliance requirements with broader regulatory reforms, the administration is seeking to reshape how digital assets are traded, withdrawn and taxed in the United States while strengthening the country’s position in the global cryptocurrency industry.",
+  ],
   source: {
     name: "The Block",
-    url: "https://www.theblock.co/post/411878/mizuho-cuts-bitgo-price-target-to-11-but-says-clarity-act-delays-could-prove-advantageous",
+    url: "https://www.theblock.co/news/regulation/2026-08-19-trump-crypto-tax-deposit-rule-digital-asset-regulations",
   },
 };
 
 /** Curated picks for the Trending rail. */
-export const trendingPosts: Post[] = [mizuhoBitGo];
+export const trendingPosts: Post[] = [trumpDigitalAssetRegulations];
 
 /** Reverse-chronological feed. Empty until more stories are added. */
 export const latestPosts: Post[] = [];

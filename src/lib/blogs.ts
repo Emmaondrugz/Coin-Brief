@@ -1146,36 +1146,40 @@ const mizuhoBitGo: Post = {
 };
 
 const btcBreaksResistance: Post = {
-  slug: "bitcoin-breaks-resistance-above-150k",
-  title: "Bitcoin breaks resistance, surges above $150,000",
+  slug: "trump-signals-stronger-us-support-for-crypto-industry",
+  title: "Trump Signals Stronger U.S. Support for the Crypto Industry",
   excerpt:
-    "Bitcoin has surged above $150,000 for the first time, breaking through a key resistance level that has held for months.",
+    "President Donald Trump met with leading cryptocurrency executives and U.S. financial regulators Wednesday, highlighting his administration's continued focus on strengthening the digital-asset industry in the United States.",
   quickTake: [
-    "Bitcoin is up 12% in the past 24 hours, reaching a new all-time high of $152,400.",
-    "The move was driven by institutional buying and favorable regulatory news.",
-    "Open interest in Bitcoin derivatives has increased 25% following the breakout.",
-    "Analysts see the next resistance level at $165,000.",
+    "Trump urged Congress to advance the CLARITY Act and emphasized the importance of clear cryptocurrency regulations.",
+    "The administration wants the United States to remain ahead of China in cryptocurrency and blockchain technology.",
+    "CFTC Chairman Mike Selig is working toward bringing Hyperliquid into the United States under a federally regulated framework.",
+    "The meeting included leaders from Coinbase, Kraken, Ripple, Gemini and Robinhood, alongside senior financial regulators.",
   ],
   pullQuote: {
-    text: "The technical breakout confirms the strength of the ongoing bull market.",
-    attribution: "Markets analyst, The Block",
+    text: "The United States should remain a global leader in cryptocurrency and blockchain technology.",
+    attribution: "President Donald Trump",
   },
   author: {
-    name: "The Block Staff",
-    role: "News Desk",
+    name: "Crypto Brief Staff",
+    role: "Policy Desk",
     publication: "The Block",
     avatar: "",
   },
-  publishedAt: "2026-08-15T16:30:00.000Z",
-  category: "markets",
-  tags: ["Bitcoin", "Price", "ATH", "Breakout", "Trading"],
-  images: [
-    "https://www.tbstat.com/cdn-cgi/image/w=506,f=avif,q=50/wp/uploads/2024/01/20240111_Bitcoin_News_2-1200x675.jpg",
+  publishedAt: "2026-08-20T14:00:00.000Z",
+  category: "regulations",
+  tags: [
+    "Donald Trump",
+    "Crypto Industry",
+    "CLARITY Act",
+    "CFTC",
+    "Hyperliquid",
   ],
-  readingTimeMinutes: 3,
+  images: ["/trump_blog1.jpeg"],
+  readingTimeMinutes: 4,
   source: {
     name: "The Block",
-    url: "https://www.theblock.co/post/412789/bitcoin-150k-breakout",
+    url: "https://www.theblock.co/news/regulation/2026-08-20-trump-signals-stronger-us-support-for-crypto-industry",
   },
 };
 

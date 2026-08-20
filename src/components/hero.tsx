@@ -1,5 +1,4 @@
 import Image from "next/image";
-import bitgoBlog from "../../public/bitgo_blog.png";
 import Link from "next/link";
 import { formatPostDate, getCategory, trendingPosts } from "@/lib/hero_blog";
 
@@ -14,17 +13,17 @@ export default function Hero() {
       border-gray-200 mx-auto border-x p-4 sm:px-6"
       >
         <Image
-          src={bitgoBlog}
-          alt=""
+          src={post.images[0] || "/noise.avif"}
+          alt={post.title}
           fill
           preload
           quality={100}
           sizes="(max-width: 1400px) 100vw, 1400px"
-          className="object-cover object-[70%_top] md:object-center"
+          className="object-cover  md:object-center"
         />
 
         {/* Darkens the left side so the headline stays readable over the photo. */}
-        <div className="pointer-events-none block md:hidden absolute inset-0 bg-linear-to-t from-black via-black/70  to-transparent" />
+        <div className="pointer-events-none block absolute inset-0 bg-linear-to-t from-black via-black/70  to-transparent" />
 
         {/*
           Grain. noise.avif is a 256x256 tile, so it repeats at its native size

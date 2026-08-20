@@ -4,7 +4,8 @@ import Header from "@/components/header";
 import Ticker from "@/components/ticker";
 import Trending from "@/components/trending";
 import { allPosts, formatPostDate } from "@/lib/blogs";
-import { getBlogContent } from "@/lib/blog_content";
+import { trendingPosts as heroPosts } from "@/lib/hero_blog";
+import { getBlogContent, type BlogContent } from "@/lib/blog_content";
 
 type BlogPageProps = {
   searchParams: Promise<{
@@ -15,8 +16,15 @@ type BlogPageProps = {
 export default async function Blog({ searchParams }: BlogPageProps) {
   const params = await searchParams;
   const slug = Array.isArray(params.slug) ? params.slug[0] : params.slug;
-  const post = allPosts.find((item) => item.slug === slug) ?? allPosts[0];
-  const content = getBlogContent(post?.slug ?? "");
+  const post =
+    allPosts.find((item) => item.slug === slug) ??
+    heroPosts.find((item) => item.slug === slug) ??
+    allPosts[0];
+  const heroContent =
+    "content" in post && Array.isArray(post.content) ? post.content : undefined;
+  const content: BlogContent | undefined = heroContent
+    ? { id: post.slug, paragraphs: heroContent }
+    : getBlogContent(post?.slug ?? "");
 
   if (!post) {
     return null;
