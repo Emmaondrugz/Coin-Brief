@@ -1,7 +1,9 @@
+import Link from "next/link";
 import Footer from "@/components/footer";
 import Header from "@/components/header";
 import Ticker from "@/components/ticker";
-import { Course, courses } from "@/lib/courses";
+import { formatPostDate } from "@/lib/blogs";
+import { courses } from "@/lib/courses";
 
 // Mock course data
 // const courses = [
@@ -75,9 +77,10 @@ export default function Learn() {
           {/* Courses grid */}
           <div className="mt-10 grid w-full grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
             {courses.map((course) => (
-              <div
+              <Link
                 key={course.id}
-                className="flex flex-col overflow-hidden rounded-sm"
+                href={`/Learn/${course.slug}`}
+                className="flex flex-col overflow-hidden rounded-sm transition-shadow hover:shadow-md"
               >
                 {/* Course image */}
                 <div className="flex h-48 w-full items-center justify-center overflow-hidden bg-gray-100">
@@ -117,10 +120,10 @@ export default function Learn() {
                     <span className="rounded-full bg-gray-100 px-3 py-1">
                       {course.difficulty}
                     </span>
-                    <span>{course.publishedAt}</span>
+                    <span>{formatPostDate(course.publishedAt)}</span>
                   </div>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         </div>
