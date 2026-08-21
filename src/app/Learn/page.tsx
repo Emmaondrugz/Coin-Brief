@@ -109,7 +109,7 @@ export default function Learn() {
                 </div>
 
                 {/* Course info */}
-                <div className="flex flex-1 flex-col p-5">
+                <div className="flex flex-1 flex-col py-5">
                   <h3 className="text-xl font-semibold text-black">
                     {course.title}
                   </h3>

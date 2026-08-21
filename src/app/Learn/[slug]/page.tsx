@@ -126,7 +126,7 @@ export default async function CoursePage({ params }: CoursePageProps) {
         </div>
       </div>
 
-      <main className="mx-auto flex w-full max-w-350 border-x border-gray-200 px-4 pb-20 sm:px-6 sm:pb-32">
+      <main className="mx-auto flex w-full max-w-350 border-x border-gray-200 px-4 pb-20 sm:pb-32">
         <section className="min-h-80 min-w-0 flex-1 border-t border-gray-200 py-10 sm:py-14">
           <h2 className="text-2xl lora sm:text-3xl">Course Content</h2>
           <p className="mt-4 text-base leading-8 text-gray-700">
