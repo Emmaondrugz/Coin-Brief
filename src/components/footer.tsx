@@ -59,23 +59,18 @@ export default function Footer() {
             </h3>
             <ul className="flex flex-col gap-2 text-sm text-gray-300">
               <li>
-                <a href="#" className="hover:text-white transition-colors">
+                <a href="/" className="hover:text-white transition-colors">
                   Home
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-white transition-colors">
+                <a href="/News" className="hover:text-white transition-colors">
                   News
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-white transition-colors">
+                <a href="/Learn" className="hover:text-white transition-colors">
                   Learn
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-white transition-colors">
-                  Podcast
                 </a>
               </li>
             </ul>
@@ -88,52 +83,18 @@ export default function Footer() {
             </h3>
             <ul className="flex flex-col gap-2 text-sm text-gray-300">
               <li>
-                <a href="#" className="hover:text-white transition-colors">
+                <a href="/News" className="hover:text-white transition-colors">
                   Latest
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-white transition-colors">
+                <a href="/News" className="hover:text-white transition-colors">
                   Trending
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-white transition-colors">
-                  Interviews
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-white transition-colors">
-                  Guides
-                </a>
-              </li>
-            </ul>
-          </div>
-
-          {/* Legal */}
-          <div className="flex flex-col gap-3">
-            <h3 className="font-normal lora text-white text-sm uppercase tracking-wider">
-              Legal
-            </h3>
-            <ul className="flex flex-col gap-2 text-sm text-gray-300">
-              <li>
-                <a href="#" className="hover:text-white transition-colors">
-                  Privacy Policy
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-white transition-colors">
-                  Terms of Service
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-white transition-colors">
-                  Cookie Policy
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-white transition-colors">
-                  Disclaimer
+                <a href="/News" className="hover:text-white transition-colors">
+                  web3
                 </a>
               </li>
             </ul>
