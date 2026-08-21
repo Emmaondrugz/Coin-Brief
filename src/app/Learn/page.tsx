@@ -1,3 +1,4 @@
+import Footer from "@/components/footer";
 import Header from "@/components/header";
 import Ticker from "@/components/ticker";
 
@@ -105,6 +106,10 @@ export default function Learn() {
             ))}
           </div>
         </div>
+      </div>
+
+      <div className="w-full bg-black">
+        <Footer />
       </div>
     </div>
   );

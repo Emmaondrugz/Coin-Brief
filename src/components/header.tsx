@@ -8,6 +8,11 @@ const categories = ["Home", "News", "Learn"];
 export default function Header() {
   const [isMobileNavOpen, setIsMobileNavOpen] = useState(false);
 
+  // Toggle mobile nav
+  const toggleMobileNav = () => {
+    setIsMobileNavOpen(!isMobileNavOpen);
+  };
+
   return (
     <div className="relative z-50 w-full border-b px-4 border-gray-200">
       <header
@@ -64,7 +69,7 @@ export default function Header() {
           type="button"
           aria-label="Open navigation"
           aria-expanded={isMobileNavOpen}
-          onClick={() => setIsMobileNavOpen(true)}
+          onClick={toggleMobileNav}
           className="flex h-12 w-12 flex-col items-end justify-center gap-1.5 pr-4 lg:hidden"
         >
           <span className="h-0.75 w-7 rounded-full bg-black" />
@@ -72,30 +77,55 @@ export default function Header() {
         </button>
       </header>
 
-      <div
-        aria-hidden={!isMobileNavOpen}
-        onClick={() => setIsMobileNavOpen(false)}
-        className={`fixed inset-0 bg-black/20 transition-opacity duration-300 lg:hidden ${
-          isMobileNavOpen ? "opacity-100" : "pointer-events-none opacity-0"
-        }`}
-      />
-
       <aside
         aria-label="Mobile navigation"
         aria-hidden={!isMobileNavOpen}
-        className={`fixed right-0 top-0 h-dvh w-[min(22rem,85vw)] bg-white shadow-2xl transition-transform duration-300 lg:hidden ${
+        className={`fixed right-0 top-28 h-screen border-t border-gray-200 w-full bg-white shadow-2xl transition-transform duration-300 lg:hidden ${
           isMobileNavOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
-        <button
-          type="button"
-          aria-label="Close navigation"
-          onClick={() => setIsMobileNavOpen(false)}
-          className="absolute right-4 top-4 flex h-10 w-10 items-center justify-center"
-        >
-          <span className="absolute h-px w-6 rotate-45 bg-black" />
-          <span className="absolute h-px w-6 -rotate-45 bg-black" />
-        </button>
+        <div className="relative h-full w-full overflow-hidden border-b border-gray-200 px-4 lg:h-[80vh]">
+          <div
+            className="
+            relative mx-auto flex h-full w-full max-w-350
+            flex-col items-start overflow-hidden
+            border-x border-gray-200 px-3 py-5
+          "
+          >
+            {/* Mobile nav content */}
+            <div className="flex flex-col gap-6 w-full">
+              {categories.map((category) => (
+                <a
+                  key={category}
+                  href={category == "Home" ? "/" : `/${category}`}
+                  className="text-2xl font-normal lora text-black hover:text-gray-600"
+                  onClick={toggleMobileNav}
+                >
+                  {category}
+                </a>
+              ))}
+              <button className="mt-4 w-full rounded-sm bg-black px-6 py-3.5 text-white">
+                Subscribe
+              </button>
+            </div>
+          </div>
+          {/* Mobile nav content */}
+          <div className="flex flex-col gap-6 p-8 pt-12">
+            {categories.map((category) => (
+              <a
+                key={category}
+                href={category == "Home" ? "/" : `/${category}`}
+                className="text-2xl font-medium text-black hover:text-gray-600"
+                onClick={toggleMobileNav}
+              >
+                {category}
+              </a>
+            ))}
+            <button className="mt-4 w-fit rounded-sm bg-black px-6 py-3 text-white">
+              Subscribe
+            </button>
+          </div>
+        </div>
       </aside>
     </div>
   );

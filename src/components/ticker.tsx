@@ -69,8 +69,7 @@ export default function Ticker() {
 
       // Polling a backgrounded tab just burns rate limit; the visibility
       // listener below catches it up when the reader returns.
-      const ok =
-        document.visibilityState === "visible" ? await load() : true;
+      const ok = document.visibilityState === "visible" ? await load() : true;
       if (cancelled) return;
 
       failures = ok ? 0 : failures + 1;
@@ -100,14 +99,11 @@ export default function Ticker() {
     };
   }, []);
 
-  // Nothing to show until real prices land — no bar, no placeholder row.
-  if (!quotes) return null;
-
   // Each copy of the list is identical, so the second one is decorative
   // duplication that screen readers should skip.
   const list = (ariaHidden: boolean) => (
     <div className="flex shrink-0 items-center" aria-hidden={ariaHidden}>
-      {quotes.map((quote) => (
+      {(quotes ?? []).map((quote) => (
         <div
           key={quote.symbol}
           className="mr-10 flex shrink-0 items-center gap-2"
@@ -130,8 +126,11 @@ export default function Ticker() {
     </div>
   );
 
+  // Always render the same wrapper markup — loading and loaded states must
+  // stay pixel-identical in height, so the row content is the only thing
+  // that swaps, never the box around it.
   return (
-    <div className="w-full border-b border-gray-200 px-4">
+    <div className="w-full border-b border-gray-200 px-4 h-10.5">
       <div
         className="relative mx-auto w-full max-w-350 overflow-hidden border-x
         border-gray-200 bg-white py-2.5 text-sm tabular-nums"
@@ -140,8 +139,11 @@ export default function Ticker() {
           className="flex w-max animate-[ticker-scroll_80s_linear_infinite]
           hover:[animation-play-state:paused] motion-reduce:animate-none"
         >
-          {list(false)}
-          {list(true)}
+          {/* Empty row (quotes === null) still occupies a line box thanks to
+              this zero-width space, so height doesn't collapse before data lands. */}
+          {!quotes && <span className="invisible">&nbsp;</span>}
+          {quotes && list(false)}
+          {quotes && list(true)}
         </div>
 
         {/*
