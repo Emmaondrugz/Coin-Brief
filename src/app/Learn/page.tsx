@@ -80,7 +80,7 @@ export default function Learn() {
               <Link
                 key={course.id}
                 href={`/Learn/${course.slug}`}
-                className="flex flex-col overflow-hidden rounded-sm transition-shadow hover:shadow-md"
+                className="flex flex-col overflow-hidden"
               >
                 {/* Course image */}
                 <div className="flex h-48 w-full items-center justify-center overflow-hidden bg-gray-100">

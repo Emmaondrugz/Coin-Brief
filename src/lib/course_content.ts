@@ -11,6 +11,7 @@ export type CourseContent = {
 };
 
 type LessonSeed = [string, string, string];
+type LessonExpansions = [string, string, string, string];
 
 const lessonSeeds: Record<string, LessonSeed[]> = {
   "stablecoin-reserve-requirements-explained": [
@@ -367,16 +368,117 @@ const lessonSeeds: Record<string, LessonSeed[]> = {
   ],
 };
 
+const lessonExpansions: Record<string, LessonExpansions> = {
+  "stablecoin-reserve-requirements-explained": [
+    "The reserve is distinct from the issuer's operating budget and is meant to provide assets that can be sold or transferred to satisfy valid redemption requests. Users should also check who is eligible to redeem directly, since retail holders may rely on an exchange or another intermediary.",
+    "Depending on the jurisdiction, requirements may also specify who can issue a stablecoin, how reserve assets must be held and how quickly disclosures must be published. These details matter in practice because a headline backing ratio alone does not explain whether assets are accessible when users need them.",
+    "A point-in-time attestation should be read with its date and scope in mind; it may not describe balances before or after that snapshot. An audit can test more processes, but readers should still review qualifications and understand that independent review is evidence, not a promise of repayment.",
+    "Short maturities and readily marketable instruments can make it easier to raise cash without selling into stressed markets. Concentration in one custodian, bank or asset type can still create a single point of failure, so reserve quality includes diversification and operational access as well as asset labels.",
+  ],
+  "stablecoins-and-cross-border-payments": [
+    "The sender first converts local money into a token through a regulated provider or exchange, then transfers it to a wallet controlled by the recipient or a payment partner. The recipient may hold the token or sell it for local currency, and each handoff can add fees or processing time.",
+    "A shared ledger can make the payment status visible to both sides and reduce reliance on correspondent-bank schedules. Businesses still need to confirm the recipient address, manage conversion rates and maintain records that connect an onchain transfer to the relevant invoice or payroll obligation.",
+    "A mistaken address or compromised wallet can make recovery difficult, so payment procedures should include test transfers and independent verification for larger amounts. Local partners may also lack enough liquidity at the required time, meaning a fast blockchain confirmation does not guarantee immediate cash availability.",
+    "Rules can cover money transmission, custody, consumer protection, sanctions screening and tax reporting, and those obligations vary by role and location. Before launching a corridor, a business should map each provider's responsibilities and confirm that the intended users and tokens are permitted.",
+  ],
+  "what-is-kucoin": [
+    "In an order book, buyers submit bids and sellers submit asks, with trades matching when their prices meet. KuCoin acts as an intermediary for account access and execution, so customers should distinguish the convenience of a hosted exchange from direct control of assets in a personal wallet.",
+    "The displayed trading fee is only one part of the total cost: spreads, slippage, funding rates and withdrawal charges can affect the final result. Compare the fee schedule for the exact product and region, and remember that frequent trading can magnify small costs over time.",
+    "Earning programs may involve lending, staking, lockups or protocol exposure, each with different terms and possible loss scenarios. Read how rewards are generated, whether withdrawals can be delayed and who controls the underlying assets before treating a quoted yield as predictable income.",
+    "Use a unique password, multi-factor authentication and withdrawal allowlists where available, and verify the destination network before sending funds. These measures reduce common account risks but cannot prevent an exchange outage, a service restriction or losses caused by volatile assets and leveraged positions.",
+  ],
+  "what-is-a-digital-commodity": [
+    "Assessing this model involves looking at how the network is governed, how tokens are issued and whether users can transact without relying on one sponsor. These characteristics are relevant context, but no single technical feature automatically decides how an asset is treated under a particular law.",
+    "Legal analysis looks at the economic reality of an offer and the promises made to buyers, not just the name attached to a token. A project may change over time, so facts about fundraising, ongoing development and the role of promoters can influence how regulators assess a transaction.",
+    "A product can touch both agencies' responsibilities: a token might be treated as a commodity in one context while a related investment contract or derivative falls under other rules. The exact activity, product structure and statutory authority all matter when determining which requirements apply.",
+    "Statements by regulators and court decisions can help explain current interpretations, but they may be limited to specific facts. Businesses should monitor changes and seek qualified legal advice rather than assuming that a token's treatment in one sale, venue or country applies everywhere.",
+  ],
+  "how-asset-managers-are-investing-in-crypto": [
+    "Each route has a different balance of convenience, fees, tracking, counterparty exposure and control over underlying assets. A listed fund can simplify reporting for clients, while direct holdings or private vehicles may offer different operational features that require additional custody and oversight.",
+    "Before allocating, an investment committee typically evaluates liquidity, historical drawdowns, market structure and how the asset fits a portfolio's objectives. Familiarity with a product's benchmark and custody arrangements can help institutions set position limits and explain risks to clients.",
+    "Controls can specify who approves trades, how private keys or fund shares are safeguarded and when exposures are reviewed. Managers also plan for market gaps, exchange failures and valuation challenges, since crypto can trade continuously while traditional investment committees operate on set schedules.",
+    "New product formats may widen access, but their growth depends on reliable service providers, suitable regulation and evidence of sustained client interest. Managers are likely to compare operational benefits against added complexity before moving from familiar exchange-traded products into more customized structures.",
+  ],
+  "sec-vs-cftc-who-regulates-crypto": [
+    "The legal question often turns on the rights conveyed and the way an asset was offered, rather than on the technology used to issue it. Disclosure rules aim to give investors material information, while enforcement can address conduct that regulators believe violates securities law.",
+    "The CFTC's derivatives oversight includes requirements for registered intermediaries and trading venues, as well as market-integrity rules. A digital asset's use in a futures contract does not by itself settle the regulatory treatment of every spot transaction involving that asset.",
+    "Courts and regulators may weigh different facts, including how a token is distributed, marketed and used. As a network becomes more independent, some facts may change, but that does not guarantee a particular legal result or remove requirements that apply to specific transactions.",
+    "Legislation could replace some uncertainty with explicit definitions, registration categories and supervisory responsibilities. The final effect would depend on the enacted text, implementation rules and transition periods, so market participants need to track proposals without treating drafts as current law.",
+  ],
+  "what-are-real-world-assets-rwas": [
+    "For example, a tokenized Treasury product depends on the legal fund or note behind it, not only the token contract. The blockchain record can make transfers easier to coordinate, but ownership rights still come from the governing documents and applicable law.",
+    "Different asset classes have different challenges: property can be hard to divide and value, while private credit depends on borrower repayment and enforcement. Clear title, dependable pricing and a workable transfer process help determine whether a token can represent an asset in a useful way.",
+    "The chain of responsibility should be documented from asset purchase through custody, issuance, transfer and redemption. If one provider fails, investors need to know which party can access the underlying asset and what legal process supports their claim.",
+    "Fractional units can lower entry sizes, but they do not necessarily create a liquid secondary market or remove investor eligibility limits. Smart contracts may automate transfers, yet legal agreements and service providers remain essential to resolve errors and enforce rights.",
+  ],
+  "what-is-coinbases-x402-protocol": [
+    "In a typical exchange, a server can respond that payment is required and include machine-readable instructions for completing it. After payment is verified, the server can deliver the requested content or service, letting the payment step fit into an ordinary web request.",
+    "An agent can be authorized with a spending limit and a set of permitted services, then make small payments without asking a person to approve every request. Strong safeguards are still needed so a compromised agent cannot spend beyond its intended budget.",
+    "A developer might charge for a single data lookup, an image-generation request or a short period of compute rather than require an account and monthly plan. These models are most useful when payment costs and confirmation delays remain small relative to the value delivered.",
+    "Systems must handle failed requests, duplicate payments, refunds and disputes in ways users can understand. Merchants also need to verify settlement safely and account for volatility, compliance and transaction fees before relying on the protocol for production revenue.",
+  ],
+  "what-happens-when-bitcoin-reaches-21-million-supply": [
+    "Halvings reduce new issuance at set block intervals, making the pace of new supply increasingly small over time. Nodes independently enforce the limit, so an attempted block that creates more than the permitted reward is rejected by the network.",
+    "Fees are paid by users competing to include transactions in blocks, and their level can vary with demand for onchain space. A durable fee market would need enough activity and willingness to pay to compensate miners as subsidy revenue declines.",
+    "Lost keys can make coins practically inaccessible, while long-term holders may choose not to sell at current prices. Estimates of liquid supply are therefore uncertain and do not change the consensus rules that determine how many bitcoin can be issued.",
+    "Investors should distinguish a predictable supply schedule from a forecast about market value. Adoption and demand can change, and network security relies on miners remaining economically motivated, so both sides of the market deserve attention.",
+  ],
+  "what-is-the-bitcoin-lightning-network-and-how-does-it-work": [
+    "A channel is funded with an onchain transaction and participants exchange signed balance updates as payments occur. Only the latest valid state needs to be settled when the channel closes, which lets users make multiple payments without placing each one in a separate Bitcoin block.",
+    "Payments can pass through a route of channels without each intermediary learning the full payment details. Conditional settlement lets funds move only when the required secret is revealed before a timeout, reducing the chance that a routing participant can keep a payment without forwarding it.",
+    "These properties can make small purchases and repeated transfers more practical, especially when users already have channel liquidity available. Actual costs depend on the route, channel policies and network conditions, so speed and low fees are benefits rather than guarantees.",
+    "A receiver needs inbound liquidity and a sender needs outbound capacity along a usable route. Wallets can manage some complexity automatically, but users should understand backup and recovery options because losing channel state or access can complicate recovery of funds.",
+  ],
+  "what-is-zksync-and-how-does-it-work": [
+    "During busy periods, transactions compete for scarce block space, raising fees and making small transfers less economical. Layer 2 systems aim to increase throughput while preserving a connection to Ethereum, though they introduce their own components and operational assumptions.",
+    "A validity proof demonstrates that state changes follow defined rules without requiring Ethereum to execute every transaction again. The system still must publish enough data for users to reconstruct or verify state, and proof generation and verification must work reliably.",
+    "The user experience depends on how funds enter and leave the network and how transaction ordering is managed. Bridge operators, sequencers and upgrade keys may hold important powers, so documentation about these roles is as relevant as the rollup's proof technology.",
+    "Progress can be assessed by looking at who can sequence transactions, submit proofs, upgrade contracts and respond to emergencies. A roadmap is not the same as a distributed system; users should evaluate current controls and realistic failure scenarios.",
+  ],
+  "what-is-polymarket": [
+    "Shares are commonly priced between zero and one unit of settlement value, so a price near one can imply that traders see an outcome as more likely. That price is shaped by available liquidity and trading incentives, and should not be interpreted as an objective probability.",
+    "Participants may trade against a pool or one another, and market depth affects how much a trade moves the price. News can shift expectations quickly, while thin liquidity may make displayed odds hard to realize for larger orders.",
+    "Prediction-market rules differ across countries and can depend on event types, user location and product structure. Platform restrictions may change in response to legal requirements, so users should check current eligibility and avoid assuming global availability.",
+    "Resolution criteria explain what evidence determines the final result and when trading ends. Users should consider how disputes are handled, how the oracle reports outcomes and whether enough liquidity exists to exit before settlement.",
+  ],
+  "what-is-a-decentralized-autonomous-organizations-dao": [
+    "A DAO can use onchain proposals to authorize treasury transfers or protocol changes, while many day-to-day decisions still happen through working groups and public discussion. Its practical structure is therefore a mix of software rules and human coordination.",
+    "Some systems use one-token-one-vote, while others use delegation, time locks or specialized councils. These mechanisms can make participation easier, but they do not automatically prevent concentrated influence or ensure that voters have enough information.",
+    "Treasury proposals should include budgets, milestones, responsible contributors and a way to report results. Separating routine spending from high-impact protocol changes can help members understand the risks and avoid approving broad, hard-to-reverse authority.",
+    "Emergency controls can limit damage during an exploit, but they may also concentrate power in a small group. Good governance documents when those powers can be used, how actions are reviewed and how normal decision-making resumes afterward.",
+  ],
+  "what-are-the-different-nft-marketplaces": [
+    "The marketplace usually coordinates listings and transactions, while ownership is recorded by a token on a blockchain. Owning the token does not always mean owning the artwork's copyright or receiving every off-platform right associated with the item.",
+    "A general marketplace may offer broad discovery and liquidity, while a curated or specialized venue can offer stronger context for a particular audience. Listings and royalties may work differently across platforms, so creators and collectors should compare how each venue handles them.",
+    "A token can have a high sale price in the past but no current buyers, and marketplace activity can vary sharply by collection. Buyers should factor in network fees and price uncertainty and avoid spending money they cannot afford to lose.",
+    "Check that the collection address matches an official source and inspect the exact wallet permissions requested during a purchase. Revoke approvals that are no longer needed, and treat unsolicited links or lookalike collections as potential scams.",
+  ],
+  "how-to-interact-with-metaverses": [
+    "Before joining, check device requirements, account settings and whether the experience is open to the public or requires an invitation. Clear community rules and moderation tools can make a meaningful difference to whether an environment feels safe and welcoming.",
+    "A wallet-based item may be portable only if another platform supports the same token standard and chooses to recognize it. If access depends on a platform account, users may have a license to use an item rather than independent control over it.",
+    "Creators can earn from events, experiences or digital goods, but revenue depends on audience demand and platform rules. Virtual currencies and items may be illiquid, and their use within a world does not imply that they can be exchanged reliably for money.",
+    "Use separate wallets for experimentation, keep recovery phrases private and review every signature prompt. Interoperability also requires agreement on identity, moderation and rights, so technical compatibility alone cannot ensure that assets or avatars will work in another world.",
+  ],
+  "how-does-tether-make-money": [
+    "When customers redeem tokens, the corresponding reserve assets may need to be converted into cash and returned through the issuer's process. Treasury yields change with interest rates and reserve composition, so income from this source can rise or fall over time.",
+    "Fees can depend on transaction size, account eligibility and current issuer terms, while secured lending introduces borrower and collateral risks. Gains on other assets can fluctuate and should not be confused with recurring income from high-quality liquid reserves.",
+    "Bank deposits may qualify for protections that do not apply to a privately issued stablecoin, and the redemption process is not identical to withdrawing a bank balance. The token's usability and legal rights depend on issuer terms and the user's ability to access official redemption channels.",
+    "Review who prepared a disclosure, which assets and liabilities it covers and how often it is updated. Users should also consider custody arrangements and redemption limitations, since a profitable business can still face liquidity or operational stress.",
+  ],
+};
+
 export const courseContentBySlug: Record<string, CourseContent> =
   Object.fromEntries(
     courses.map((course) => [
       course.slug,
       {
         id: course.id,
-        lessons: lessonSeeds[course.slug].map(([title, first, second]) => ({
-          title,
-          content: [first, second],
-        })),
+        lessons: lessonSeeds[course.slug].map(
+          ([title, first, second], index) => ({
+            title,
+            content: [first, second, lessonExpansions[course.slug][index]],
+          }),
+        ),
       },
     ]),
   );

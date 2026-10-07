@@ -1684,6 +1684,129 @@ const zeroKnowledgeAdoption: Post = {
   },
 };
 
+const bitcoinLiquidationsOctober2026: Post = {
+  slug: "bitcoin-dips-below-84000-487m-long-liquidations-october-2026",
+  title:
+    "Bitcoin briefly slides below $84,000 as crypto long liquidations reach $487 million",
+  excerpt:
+    "Bitcoin briefly fell below $84,000 as more than $487 million in leveraged long positions were liquidated across crypto markets.",
+  quickTake: [
+    "Bitcoin traded as low as about $83,800 during the pullback.",
+    "Crypto liquidations reached $555.6 million over 24 hours, including $487.2 million in long positions, according to CoinGlass.",
+    "The Block cited profit-taking and crowded positions as factors that left the market vulnerable to forced selling.",
+    "Analysts pointed to the $82,000–$83,000 range as a key area to watch after Bitcoin's strong third quarter.",
+  ],
+  author: {
+    name: "Timmy Shen",
+    role: "Reporter",
+    publication: "The Block",
+    avatar: "",
+  },
+  publishedAt: "2026-10-07T03:57:00.000Z",
+  category: "markets",
+  tags: ["Bitcoin", "Liquidations", "Markets", "Trading", "October 2026"],
+  images: [
+    "https://www.tbstat.com/cdn-cgi/image/w=506,f=avif,q=50/wp/uploads/2026/10/bitcoin-1200x675.png",
+  ],
+  readingTimeMinutes: 3,
+  source: {
+    name: "The Block",
+    url: "https://www.theblock.co/news/markets/2026-10-06-bitcoin-slides-crypto-long-liquidations-surge-417882",
+  },
+};
+
+const coinbaseGlobalExchangeOctober2026: Post = {
+  slug: "coinbase-pro-returns-deribit-global-exchange-october-2026",
+  title:
+    "Coinbase Pro to return; Deribit integration creates Coinbase Global Exchange",
+  excerpt:
+    "Coinbase says it will relaunch Coinbase Pro by year-end and combine its U.S. and international derivatives access through its completed Deribit integration.",
+  quickTake: [
+    "Coinbase plans to bring back Coinbase Pro for spot, futures, perpetuals, options, and equities trading.",
+    "The completed Deribit integration forms Coinbase Global Exchange.",
+    "Coinbase said eligible U.S. clients will gain access to global crypto derivatives liquidity through its regulated platform.",
+    "The exchange expects to roll out Deribit-powered options and spot margin in the coming weeks.",
+  ],
+  author: {
+    name: "Yogita Khatri",
+    role: "Reporter",
+    publication: "The Block",
+    avatar: "",
+  },
+  publishedAt: "2026-10-07T03:00:00.000Z",
+  category: "business",
+  tags: ["Coinbase", "Deribit", "Exchanges", "Derivatives", "October 2026"],
+  images: [
+    "https://www.tbstat.com/cdn-cgi/image/w=506,f=avif,q=50/wp/uploads/2023/04/20230419_Coinbase_Generic2-1200x675.jpg",
+  ],
+  readingTimeMinutes: 4,
+  source: {
+    name: "The Block",
+    url: "https://www.theblock.co/news/business/2026-10-06-coinbase-pro-deribit-integration-coinbase-global-exchange-417867",
+  },
+};
+
+const dojSeeksIranCryptoProceedsSeptember2026: Post = {
+  slug: "doj-seeks-61m-iranian-oil-crypto-proceeds-september-2026",
+  title:
+    "US DOJ seeks $61 million in crypto proceeds from illicit Iranian oil sales laundered on Binance",
+  excerpt:
+    "U.S. prosecutors filed to forfeit about $61 million in cryptocurrency allegedly tied to black-market Iranian oil sales and transfers through Binance accounts.",
+  quickTake: [
+    "The Department of Justice is seeking forfeiture of approximately $61 million in crypto proceeds.",
+    "Prosecutors allege that two Chinese companies used Binance accounts to move funds connected to Iranian oil sales.",
+    "The complaint says investigators traced more than $1.5 billion through linked cryptocurrency addresses.",
+    "The case highlights the role of sanctions enforcement and compliance controls in crypto markets.",
+  ],
+  author: {
+    name: "Danny Park",
+    role: "Reporter",
+    publication: "The Block",
+    avatar: "",
+  },
+  publishedAt: "2026-09-15T04:01:00.000Z",
+  category: "regulations",
+  tags: ["DOJ", "Binance", "Iran", "Sanctions", "September 2026"],
+  images: [
+    "https://www.tbstat.com/cdn-cgi/image/w=506,f=avif,q=50/wp/uploads/2019/07/iran-3-1200x675.jpg",
+  ],
+  readingTimeMinutes: 4,
+  source: {
+    name: "The Block",
+    url: "https://www.theblock.co/news/regulation/2026-09-15-doj-61-million-crypto-proceeds-iranian-oil-sales-414768",
+  },
+};
+
+const clarityActSenateVoteSeptember2026: Post = {
+  slug: "clarity-act-senate-vote-outlook-september-2026",
+  title: "Where the Clarity Act stands ahead of Tuesday’s Senate vote",
+  excerpt:
+    "A revised Senate draft addressed disputes over political conflicts of interest, stablecoin rewards, and developer protections, but support for advancing the bill remained uncertain.",
+  quickTake: [
+    "The Senate was preparing for an initial procedural vote on the crypto market-structure legislation.",
+    "Republicans' revised draft addressed ethics rules for public officials, stablecoin rewards, and protections for software developers.",
+    "Some crypto-industry participants welcomed the text, while banks and lawmakers continued to raise objections.",
+    "The proposal would give the CFTC broader authority while defining the SEC's role in federal crypto oversight.",
+  ],
+  author: {
+    name: "Sarah Wynn",
+    role: "Reporter",
+    publication: "The Block",
+    avatar: "",
+  },
+  publishedAt: "2026-09-14T21:32:00.000Z",
+  category: "regulations",
+  tags: ["CLARITY Act", "Senate", "Crypto Policy", "Regulation", "September 2026"],
+  images: [
+    "https://www.tbstat.com/cdn-cgi/image/w=506,f=avif,q=50/wp/uploads/2022/01/20210120_Capitol_Generic-1200x675.jpg",
+  ],
+  readingTimeMinutes: 4,
+  source: {
+    name: "The Block",
+    url: "https://www.theblock.co/news/regulation/2026-09-14-where-the-clarity-act-stands-ahead-of-tuesdays-senate-vote-414720",
+  },
+};
+
 // ============================================
 // EXPORT ALL POSTS
 // ============================================
@@ -1699,6 +1822,10 @@ export const trendingPosts: Post[] = [
 
 /** Reverse-chronological feed. */
 export const latestPosts: Post[] = [
+  bitcoinLiquidationsOctober2026,
+  coinbaseGlobalExchangeOctober2026,
+  dojSeeksIranCryptoProceedsSeptember2026,
+  clarityActSenateVoteSeptember2026,
   btcBreaksResistance,
   theBlockAppointsSteveChungCEO,
   clarityActAdvances,

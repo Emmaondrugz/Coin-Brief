@@ -1,12 +1,30 @@
 "use client";
 
-import { Fragment, useState } from "react";
+import { Fragment, useEffect, useState } from "react";
 import Sparkle from "@/components/icons/Sparkle";
+import NewsletterForm from "@/components/newsletter-form";
 
 const categories = ["Home", "News", "Learn"];
 
 export default function Header() {
   const [isMobileNavOpen, setIsMobileNavOpen] = useState(false);
+  const [isSubscribeModalOpen, setIsSubscribeModalOpen] = useState(false);
+
+  useEffect(() => {
+    if (!isSubscribeModalOpen) return;
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setIsSubscribeModalOpen(false);
+    };
+
+    document.addEventListener("keydown", handleKeyDown);
+    document.body.style.overflow = "hidden";
+
+    return () => {
+      document.removeEventListener("keydown", handleKeyDown);
+      document.body.style.overflow = "";
+    };
+  }, [isSubscribeModalOpen]);
 
   // Toggle mobile nav
   const toggleMobileNav = () => {
@@ -14,7 +32,11 @@ export default function Header() {
   };
 
   return (
-    <div className="relative z-50 w-full border-b px-4 border-gray-200">
+    <div
+      className={`relative w-full border-b px-4 border-gray-200 ${
+        isSubscribeModalOpen ? "z-[100]" : "z-50"
+      }`}
+    >
       <header
         className="w-full flex items-center justify-between max-w-350 py-3 sm:py-4 
       border-gray-200 mx-auto border-x px-1 md:px-4"
@@ -42,7 +64,11 @@ export default function Header() {
 
         {/* Nav buttons */}
         <div className="lg:flex hidden">
-          <button className="w-fit h-fit rounded-sm bg-black text-white py-[1.7px] pb-1 pl-[1.5px] pr-0.5">
+          <button
+            type="button"
+            onClick={() => setIsSubscribeModalOpen(true)}
+            className="w-fit h-fit rounded-sm bg-black text-white py-[1.7px] pb-1 pl-[1.5px] pr-0.5"
+          >
             <div className="h-9.5 rounded-xs px-2 gap-2 border-t border-gray-400 w-35 flex items-center justify-center shadow-[inset_0_1px_2px_rgba(255,255,255,0.25)]">
               Subscribe
               <svg
@@ -104,7 +130,14 @@ export default function Header() {
                   {category}
                 </a>
               ))}
-              <button className="mt-4 w-full rounded-sm bg-black px-6 py-3.5 text-white">
+              <button
+                type="button"
+                onClick={() => {
+                  setIsMobileNavOpen(false);
+                  setIsSubscribeModalOpen(true);
+                }}
+                className="mt-4 w-full rounded-sm bg-black px-6 py-3.5 text-white"
+              >
                 Subscribe
               </button>
             </div>
@@ -121,12 +154,67 @@ export default function Header() {
                 {category}
               </a>
             ))}
-            <button className="mt-4 w-fit rounded-sm bg-black px-6 py-3 text-white">
+            <button
+              type="button"
+              onClick={() => {
+                setIsMobileNavOpen(false);
+                setIsSubscribeModalOpen(true);
+              }}
+              className="mt-4 w-fit rounded-sm bg-black px-6 py-3 text-white"
+            >
               Subscribe
             </button>
           </div>
         </div>
       </aside>
+
+      {isSubscribeModalOpen && (
+        <div
+          className="fixed inset-0 z-[100] flex items-center justify-center bg-black/70 px-4"
+          onClick={(event) => {
+            if (event.target === event.currentTarget) {
+              setIsSubscribeModalOpen(false);
+            }
+          }}
+        >
+          <section
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="subscribe-modal-title"
+            className="relative w-full max-w-md rounded-2xl bg-white p-6 text-black shadow-2xl sm:p-8"
+          >
+            <button
+              type="button"
+              aria-label="Close subscribe dialog"
+              onClick={() => setIsSubscribeModalOpen(false)}
+              className="absolute right-4 top-4 flex h-9 w-9 items-center justify-center rounded-full hover:bg-gray-100"
+            >
+              <svg
+                aria-hidden="true"
+                className="h-5 w-5"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+              >
+                <path d="m18 6-12 12M6 6l12 12" />
+              </svg>
+            </button>
+            <div className="flex flex-col gap-5 pr-7">
+              <div>
+                <h2 id="subscribe-modal-title" className="text-2xl lora">
+                  Subscribe to Coin Brief
+                </h2>
+                <p className="mt-2 text-sm text-gray-600">
+                  Get our latest crypto news and updates in your inbox.
+                </p>
+              </div>
+              <NewsletterForm successLabel loadingLabel />
+            </div>
+          </section>
+        </div>
+      )}
     </div>
   );
 }

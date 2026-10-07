@@ -42,7 +42,7 @@ export default function Hero() {
             )}
           </div>
 
-          <h1 className="lora mt-5 leading-[110%] text-5xl sm:text-7xl">
+          <h1 className="lora mt-5 leading-[110%] text-3xl sm:text-7xl">
             {post.title}
           </h1>
 

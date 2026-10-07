@@ -58,7 +58,7 @@ export default async function Blog({ searchParams }: BlogPageProps) {
           <div className="pointer-events-none absolute inset-0 bg-linear-to-t from-black via-black/65 to-transparent" />
           <div className="pointer-events-none absolute inset-0 bg-[url(/noise.avif)] bg-repeat opacity-20 mix-blend-overlay" />
 
-          <div className="relative z-10 w-full text-white sm:max-w-170">
+          <div className="relative z-10 w-full text-white sm:max-w-150">
             <div className="text-sm text-white/70">
               <a href="/News" className="hover:text-white">
                 News
@@ -66,7 +66,7 @@ export default async function Blog({ searchParams }: BlogPageProps) {
               / Blog
             </div>
 
-            <h1 className="mt-5 text-3xl leading-[115%] lora sm:text-4xl">
+            <h1 className="mt-5 text-2xl leading-[115%] lora sm:text-5xl">
               {post.title}
             </h1>
 

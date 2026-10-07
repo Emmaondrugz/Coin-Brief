@@ -5,7 +5,7 @@ import Header from "@/components/header";
 import Ticker from "@/components/ticker";
 import { formatPostDate } from "@/lib/blogs";
 import { getCourseContent } from "@/lib/course_content";
-import { courses, getCourseBySlug } from "@/lib/courses";
+import { Course, courses, getCourseBySlug } from "@/lib/courses";
 
 type CoursePageProps = {
   params: Promise<{
@@ -43,6 +43,16 @@ export default async function CoursePage({ params }: CoursePageProps) {
     );
   }
 
+  const alternativeCourses: Course[] = courses
+    .filter((alternative) => alternative.slug !== course.slug)
+    .sort(
+      (a, b) =>
+        Number(b.category === course.category) -
+          Number(a.category === course.category) ||
+        new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime(),
+    )
+    .slice(0, 6);
+
   return (
     <div className="h-fit w-full bg-white inter">
       <Ticker />
@@ -78,7 +88,7 @@ export default async function CoursePage({ params }: CoursePageProps) {
               / {course.title}
             </div>
 
-            <h1 className="mt-5 text-3xl leading-[115%] lora sm:text-4xl">
+            <h1 className="mt-5 text-2xl leading-[115%] lora sm:text-7xl">
               {course.title}
             </h1>
 
@@ -126,7 +136,7 @@ export default async function CoursePage({ params }: CoursePageProps) {
         </div>
       </div>
 
-      <main className="mx-auto flex w-full max-w-350 border-x border-gray-200 px-4 pb-20 sm:pb-32">
+      <main className="mx-auto flex w-full max-w-350 flex-col border-x border-gray-200 px-4 pb-20 sm:pb-32 lg:flex-row">
         <section className="min-h-80 min-w-0 flex-1 border-t border-gray-200 py-10 sm:py-14">
           <h2 className="text-2xl lora sm:text-3xl">Course Content</h2>
           <p className="mt-4 text-base leading-8 text-gray-700">
@@ -141,7 +151,7 @@ export default async function CoursePage({ params }: CoursePageProps) {
                 <h3 className="text-xl font-semibold text-black lora sm:text-2xl">
                   {lesson.title}
                 </h3>
-                <div className="mt-4 space-y-4">
+                <div className="mt-4">
                   {lesson.content.map((paragraph, index) => (
                     <p key={`${lesson.title}-${index}`}>{paragraph}</p>
                   ))}
@@ -172,6 +182,31 @@ export default async function CoursePage({ params }: CoursePageProps) {
             </div>
           </article>
         </section>
+
+        <aside className="w-full shrink-0 border-t border-gray-200 py-8 lg:w-120 lg:border-l lg:border-t-0 lg:py-10 lg:pl-6">
+          <div className="mb-5 flex w-full items-center gap-4 sm:mb-10">
+            <h2 className="whitespace-nowrap text-2xl lora">More Courses</h2>
+            <div className="h-px flex-1 bg-black" />
+          </div>
+
+          <div className="flex flex-col">
+            {alternativeCourses.map((alternative) => (
+              <Link
+                key={alternative.slug}
+                href={`/Learn/${alternative.slug}`}
+                className="group mt-5 flex flex-col gap-2 border-b border-gray-200 pb-5 first:mt-0"
+              >
+                <span className="group-hover:underline">
+                  {alternative.title}
+                </span>
+                <span className="text-sm text-gray-700">
+                  {alternative.category} ·{" "}
+                  {formatPostDate(alternative.publishedAt)}
+                </span>
+              </Link>
+            ))}
+          </div>
+        </aside>
       </main>
 
       <div className="w-full bg-black">

@@ -1,3 +1,5 @@
+import NewsletterForm from "@/components/newsletter-form";
+
 export default function Footer() {
   return (
     <div className="h-fit relative w-full text-white border-b px-4 border-gray-800 overflow-hidden">
@@ -13,32 +15,7 @@ export default function Footer() {
 
           <div>Subscribe to our newsletters and updates.</div>
 
-          <div className="w-fit h-12">
-            <div className="bg-[#1a1a1a] w-80 flex h-full rounded-full relative">
-              <input
-                type="email"
-                placeholder="Email Address"
-                className="w-full h-full bg-transparent rounded-[inherit] pl-5 pr-1 py-2 placeholder:text-gray-400 placeholder:text-sm outline-0"
-              />
-              <div className="w-12 h-10 mt-1 mr-1 rounded-[inherit] bg-white flex items-center justify-center absolute right-0">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="#000"
-                  strokeWidth="1.75"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  className="lucide lucide-arrow-right-icon lucide-arrow-right"
-                >
-                  <path d="M5 12h14" />
-                  <path d="m12 5 7 7-7 7" />
-                </svg>
-              </div>
-            </div>
-          </div>
+          <NewsletterForm />
 
           <div>
             Your premier destination for crypto news and updates. Always first.
