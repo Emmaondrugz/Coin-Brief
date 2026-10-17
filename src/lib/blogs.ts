@@ -1684,6 +1684,67 @@ const zeroKnowledgeAdoption: Post = {
   },
 };
 
+const coinbaseMarqetaStablecoinCardsOctober2026: Post = {
+  slug: "coinbase-marqeta-stablecoin-cards-october-2026",
+  title: "Coinbase to power stablecoin-backed cards for Marqeta customers",
+  excerpt:
+    "Coinbase and Marqeta expanded their partnership so businesses can offer payment cards funded by customers' stablecoin holdings.",
+  quickTake: [
+    "Coinbase will custody the stablecoins and convert between digital and traditional currencies.",
+    "Marqeta will issue the cards and process payments, while Coinbase's Base network handles onchain settlement.",
+    "The companies say businesses will be able to fund card programs around the clock and cardholders can spend wherever cards are accepted.",
+    "The announcement did not specify fees, a launch date, or which stablecoins the service will initially support.",
+  ],
+  author: {
+    name: "Kyle Baird",
+    role: "Reporter",
+    publication: "The Block",
+    avatar: "",
+  },
+  publishedAt: "2026-10-16T17:21:00.000Z",
+  category: "business",
+  tags: ["Coinbase", "Marqeta", "Stablecoins", "Payments", "October 2026"],
+  images: [
+    "https://www.tbstat.com/cdn-cgi/image/f=avif,q=50/wp/uploads/2025/09/img-banner-card-1-1.png",
+  ],
+  readingTimeMinutes: 2,
+  source: {
+    name: "The Block",
+    url: "https://www.theblock.co/news/business/2026-10-16-coinbase-to-power-stablecoin-backed-cards-for-marqeta-customers-418833",
+  },
+};
+
+const jpmorganCryptoInflowsOctober2026: Post = {
+  slug: "jpmorgan-crypto-inflows-50-billion-october-2026",
+  title:
+    "JPMorgan estimates $50 billion has flowed into crypto this year as momentum improves into Q4",
+  excerpt:
+    "JPMorgan analysts estimate about $50 billion in digital asset inflows in 2026, with ETF flows and futures positions improving during the third quarter.",
+  quickTake: [
+    "The analysts put year-to-date inflows at about $50 billion, an annualized pace of $66 billion that is still roughly half of last year's pace.",
+    "ETF flows turned positive for the year after outflows in May and June, while CME bitcoin and ether futures positions rose.",
+    "Corporate treasury buying and venture funding drove most inflows in the first half, with broader retail and institutional participation appearing in the third quarter.",
+    "JPMorgan estimates bitcoin miners have sold a net $1.8 billion this year, partly to fund AI infrastructure spending.",
+  ],
+  author: {
+    name: "Yogita Khatri",
+    role: "Senior Reporter",
+    publication: "The Block",
+    avatar: "",
+  },
+  publishedAt: "2026-10-08T18:46:00.000Z",
+  category: "markets",
+  tags: ["JPMorgan", "Crypto", "ETFs", "Bitcoin", "October 2026"],
+  images: [
+    "https://www.tbstat.com/cdn-cgi/image/f=avif,q=50/wp/uploads/2024/05/20240501_JPMorgan_News-1200x675.jpg",
+  ],
+  readingTimeMinutes: 4,
+  source: {
+    name: "The Block",
+    url: "https://www.theblock.co/news/markets/2026-10-08-jpmorgan-crypto-inflows-50-billion-etf-futures-q4-418115",
+  },
+};
+
 const bitcoinLiquidationsOctober2026: Post = {
   slug: "bitcoin-dips-below-84000-487m-long-liquidations-october-2026",
   title:
@@ -1822,6 +1883,8 @@ export const trendingPosts: Post[] = [
 
 /** Reverse-chronological feed. */
 export const latestPosts: Post[] = [
+  coinbaseMarqetaStablecoinCardsOctober2026,
+  jpmorganCryptoInflowsOctober2026,
   bitcoinLiquidationsOctober2026,
   coinbaseGlobalExchangeOctober2026,
   dojSeeksIranCryptoProceedsSeptember2026,

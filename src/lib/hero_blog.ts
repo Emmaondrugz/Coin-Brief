@@ -115,11 +115,11 @@ export type Post = {
 
 export const trumpDigitalAssetRegulations: Post = {
   slug: "trump-035-crypto-tax-deposit-rule-digital-asset-regulations",
-  title: "Trump Introduces 0.35% Crypto Tax Deposit Rule...",
+  title: "Trump Introduces 0.45% Crypto Tax Deposit Rule...",
   excerpt:
-    "President Donald Trump renewed his push for clearer cryptocurrency regulation while announcing a proposed 0.35% federal tax deposit requirement for qualifying cryptocurrency withdrawals.",
+    "President Donald Trump renewed his push for clearer cryptocurrency regulation while announcing a proposed 0.45% federal tax deposit requirement for qualifying cryptocurrency withdrawals.",
   quickTake: [
-    "Qualifying cryptocurrency withdrawals would require a separate deposit equal to 0.35% of the applicable capital-gains amount.",
+    "Qualifying cryptocurrency withdrawals would require a separate deposit equal to 0.45% of the applicable capital-gains amount.",
     "The deposit would be credited toward the taxpayer's federal capital-gains obligation rather than deducted from the cryptocurrency being withdrawn.",
     "Trump urged Congress to advance the CLARITY Act and discussed Hyperliquid and the CFTC.",
     "The proposed mechanism would create a new compliance step for exchanges, platforms, and investors.",
@@ -147,8 +147,8 @@ export const trumpDigitalAssetRegulations: Post = {
   images: ["/trump_blog2.jpeg"],
   readingTimeMinutes: 8,
   content: [
-    "President Donald Trump renewed his push for clearer cryptocurrency regulation during a White House meeting with cryptocurrency and technology leaders on August 19, 2026, while announcing a new 0.35% federal tax deposit requirement for qualifying cryptocurrency withdrawals.",
-    "Under the new framework, eligible IPv4 cryptocurrency withdrawals would require a separate deposit equal to 0.35% of the applicable capital-gains amount. The deposit would be made separately from the cryptocurrency being withdrawn and credited toward the taxpayer’s federal capital-gains tax obligation.",
+    "President Donald Trump renewed his push for clearer cryptocurrency regulation during a White House meeting with cryptocurrency and technology leaders on August 19, 2026, while announcing a new 0.45% federal tax deposit requirement for qualifying cryptocurrency withdrawals.",
+    "Under the new framework, eligible IPv4 cryptocurrency withdrawals would require a separate deposit equal to 0.45% of the applicable capital-gains amount. The deposit would be made separately from the cryptocurrency being withdrawn and credited toward the taxpayer’s federal capital-gains tax obligation.",
     "The mechanism is designed to separate the cryptocurrency withdrawal from its associated tax obligation. Rather than automatically deducting the amount from the cryptocurrency being withdrawn, taxpayers would be required to make the applicable deposit separately through the underlying cryptocurrency account before the withdrawal could be cleared under the new rules.",
     "The development comes as Trump urged Congress to advance the CLARITY Act, arguing that clearer rules for digital assets are essential to maintaining U.S. leadership in financial technology and preventing cryptocurrency innovation and businesses from moving overseas.",
     "The CLARITY Act has become a major focus for the cryptocurrency industry because it seeks to establish clearer regulatory boundaries for digital assets and crypto-related businesses. One of the industry’s longstanding concerns has been uncertainty over the respective roles of the Securities and Exchange Commission (SEC) and the Commodity Futures Trading Commission (CFTC).",
@@ -156,7 +156,7 @@ export const trumpDigitalAssetRegulations: Post = {
     "Trump also discussed developments involving Hyperliquid and the CFTC, highlighting the administration’s interest in bringing major digital-asset activity into a clearer U.S. regulatory framework.",
     "The White House meeting brought together representatives from major cryptocurrency and financial-technology companies, including Coinbase, Kraken, Ripple, Gemini and Robinhood, alongside senior U.S. financial regulators.",
     "The broader message from the meeting was consistent with Trump’s goal of establishing the United States as a leading destination for cryptocurrency and blockchain businesses. His administration has increasingly presented digital assets not simply as a regulatory issue, but as an area where the United States can compete for investment, technological development and financial innovation.",
-    "For cryptocurrency investors, the new tax mechanism introduces an additional compliance requirement for qualifying cryptocurrency withdrawals. Exchanges and digital-asset platforms would need to account for the applicable 0.35% federal tax deposit, document the associated capital gains and ensure that the required deposit is completed separately from the cryptocurrency withdrawal.",
+    "For cryptocurrency investors, the new tax mechanism introduces an additional compliance requirement for qualifying cryptocurrency withdrawals. Exchanges and digital-asset platforms would need to account for the applicable 0.45% federal tax deposit, document the associated capital gains and ensure that the required deposit is completed separately from the cryptocurrency withdrawal.",
     "Investors should therefore closely monitor developments surrounding the CLARITY Act, the SEC, the CFTC and additional guidance on cryptocurrency taxation and withdrawal requirements.",
     "The White House meeting represents another significant development in Washington’s evolving approach to digital assets. By combining new tax-compliance requirements with broader regulatory reforms, the administration is seeking to reshape how digital assets are traded, withdrawn and taxed in the United States while strengthening the country’s position in the global cryptocurrency industry.",
   ],
